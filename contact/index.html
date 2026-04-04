@@ -5,7 +5,6 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Contact</title>
 </head>
-
 <body>
   <h1>Contact</h1>
 
@@ -20,16 +19,16 @@
   </nav>
 
   <form action="mailto:jameramellyn@gmail.com" method="post" enctype="text/plain">
-    <label>Email:</label><br>
-    <input type="email" name="email" style="width: 100%;"><br><br>
+    <label for="email">Email:</label><br>
+    <input id="email" name="email" type="email" value="test@example.com"><br><br>
 
-    <label>Subject:</label><br>
-    <input name="subject" style="width: 100%;"><br><br>
+    <label for="subject">Subject:</label><br>
+    <input id="subject" name="subject" value="Test Subject"><br><br>
 
-    <label>Message:</label><br>
-    <textarea name="body" style="width: 100%;"></textarea><br><br>
+    <label for="body">Message:</label><br>
+    <textarea id="body" name="body">This is a test message.</textarea><br><br>
 
-    <button type="submit">Submit</button>
+    <button>Submit</button>
   </form>
 </body>
 </html>
