@@ -7,7 +7,11 @@
 
   <style>
     html {
-      --color-accent: oklch(65% 50% 0);
+      --color-accent: rgba(186, 206, 215, 1);
+      --color-nav-bg: #f7f7f5;
+      --color-border: #e5e5e0;
+      --color-text: #37352f;
+      --color-hover-text: #1f2937;
       accent-color: var(--color-accent);
     }
 
@@ -15,156 +19,14 @@
       font-family: Arial, sans-serif;
       line-height: 1.6;
       max-width: 100ch;
-      margin-inline: auto;
-      padding: 1rem;
-    }
-
-    h1, h2, h3, h4, h5, h6 {
-      line-height: 1.1;
-      text-wrap: balance;
-    }
-
-    h1 {
-      font-size: 400%;
-    }
-
-    nav ul,
-    nav li {
-      display: contents;
+      margin: 0 auto;
+      padding: 0;
+      color: var(--color-text);
+      background: white;
     }
 
     nav {
-      display: flex;
-      margin-bottom: 1rem;
-      border-bottom: 1px solid oklch(80% 3% 200);
-    }
-
-    nav a {
-      flex: 1;
-      text-decoration: none;
-      color: inherit;
-      text-align: center;
-      padding: 0.5em;
-    }
-
-    nav a.current {
-      border-bottom: 0.4em solid oklch(80% 3% 200);
-      padding-bottom: 0.1em;
-    }
-
-    nav a:hover {
-      border-bottom: 0.4em solid var(--color-accent);
-      padding-bottom: 0.1em;
-    }
-
-    .projects {
-      display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(15em, 1fr));
-      gap: 1em;
-    }
-
-    .projects article {
-      display: grid;
-      grid-template-rows: subgrid;
-      grid-row: span 3;
-      gap: 1em;
-    }
-
-    .projects h2 {
-      margin: 0;
-    }
-
-    .projects img {
-      width: 100%;
-      height: auto;
-    }
-  </style>
-</head>
-<body>
-  <h1>Projects</h1>
-
-  <nav>
-    <ul>
-      <li><a href="../">Home</a></li>
-      <li><a href="https://github.com/jameramellyn" target="_blank">Github</a></li>
-      <li><a href="../contact/">Contact</a></li>
-      <li><a href="../projects/" class="current">Projects</a></li>
-      <li><a href="../resume/">Resume</a></li>
-    </ul>
-  </nav>
-
-  <div class="projects">
-    <article>
-      <h2>Lorem ipsum dolor sit</h2>
-      <img src="https://vis-society.github.io/labs/2/images/empty.svg" alt="">
-      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
-    </article>
-
-    <article>
-      <h2>Dolor sit amet consectetur</h2>
-      <img src="https://vis-society.github.io/labs/2/images/empty.svg" alt="">
-      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
-    </article>
-
-    <article>
-      <h2>Adipisicing elit sed do</h2>
-      <img src="https://vis-society.github.io/labs/2/images/empty.svg" alt="">
-      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
-    </article>
-
-    <article>
-      <h2>Tempor incididunt ut labore</h2>
-      <img src="https://vis-society.github.io/labs/2/images/empty.svg" alt="">
-      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
-    </article>
-
-    <article>
-      <h2>Et dolore magna aliqua</h2>
-      <img src="https://vis-society.github.io/labs/2/images/empty.svg" alt="">
-      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
-    </article>
-
-    <article>
-      <h2>Ut enim ad minim</h2>
-      <img src="https://vis-society.github.io/labs/2/images/empty.svg" alt="">
-      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
-    </article>
-
-    <article>
-      <h2>Veniam quis nostrud exercitation</h2>
-      <img src="https://vis-society.github.io/labs/2/images/empty.svg" alt="">
-      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
-    </article>
-
-    <article>
-      <h2>Ullamco laboris nisi ut</h2>
-      <img src="https://vis-society.github.io/labs/2/images/empty.svg" alt="">
-      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
-    </article>
-
-    <article>
-      <h2>Aliquip ex ea commodo</h2>
-      <img src="https://vis-society.github.io/labs/2/images/empty.svg" alt="">
-      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
-    </article>
-
-    <article>
-      <h2>Duis aute irure dolor</h2>
-      <img src="https://vis-society.github.io/labs/2/images/empty.svg" alt="">
-      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
-    </article>
-
-    <article>
-      <h2>In reprehenderit in voluptate</h2>
-      <img src="https://vis-society.github.io/labs/2/images/empty.svg" alt="">
-      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
-    </article>
-
-    <article>
-      <h2>Velit esse cillum dolore</h2>
-      <img src="https://vis-society.github.io/labs/2/images/empty.svg" alt="">
-      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
-    </article>
-  </div>
-</body>
-</html>
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      background-colo

@@ -7,103 +7,85 @@
 
   <style>
     html {
-      --color-accent: oklch(65% 50% 0);
+      --color-accent: rgba(186, 206, 215, 1);
+      --color-nav-bg: #f7f7f5;
+      --color-border: #e5e5e0;
+      --color-text: #37352f;
+      --color-hover-text: #1f2937;
       accent-color: var(--color-accent);
     }
 
     body {
       font-family: Arial, sans-serif;
-      line-height: 1.5;
-      max-width: 90ch;
-      margin-inline: auto;
-      padding: 1rem;
-    }
-
-    h1, h2, h3, h4, h5, h6 {
-      line-height: 1.1;
-      text-wrap: balance;
-    }
-
-    h1 {
-      font-size: 3rem;
-      margin-bottom: 0.25rem;
-    }
-
-    h2 {
-      font-size: 1.4rem;
-      margin-top: 2rem;
-      margin-bottom: 0.75rem;
-      padding-bottom: 0.2rem;
-      border-bottom: 2px solid oklch(85% 3% 200);
-    }
-
-    h3 {
-      font-size: 1.05rem;
-      margin: 0;
-    }
-
-    p {
-      margin: 0.35rem 0;
-    }
-
-    ul {
-      margin: 0.5rem 0 0 1.25rem;
+      line-height: 1.6;
+      max-width: 100ch;
+      margin: 0 auto;
       padding: 0;
-    }
-
-    li {
-      margin-bottom: 0.4rem;
-    }
-
-    section {
-      margin-bottom: 1.5rem;
-    }
-
-    article {
-      margin-bottom: 1.5rem;
-    }
-
-    nav ul,
-    nav li {
-      display: contents;
+      color: var(--color-text);
+      background: white;
     }
 
     nav {
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      background-color: var(--color-nav-bg);
+      border-bottom: 1px solid var(--color-border);
+      padding: 0.5rem 1rem;
+    }
+
+    nav ul {
+      list-style: none;
       display: flex;
-      margin-bottom: 1.5rem;
-      border-bottom: 1px solid oklch(80% 3% 200);
+      justify-content: center;
+      gap: 0.5rem;
+      margin: 0;
+      padding: 0;
+    }
+
+    nav li {
+      display: block;
     }
 
     nav a {
-      flex: 1;
+      display: inline-block;
       text-decoration: none;
-      color: inherit;
-      text-align: center;
-      padding: 0.5em;
-    }
-
-    nav a.current {
-      border-bottom: 0.4em solid oklch(80% 3% 200);
-      padding-bottom: 0.1em;
+      color: var(--color-text);
+      padding: 0.55rem 1rem;
+      border-radius: 0.5rem;
+      transition: background-color 0.2s ease, color 0.2s ease;
+      font-size: 0.95rem;
     }
 
     nav a:hover {
-      border-bottom: 0.4em solid var(--color-accent);
-      padding-bottom: 0.1em;
+      background-color: var(--color-accent);
+      color: var(--color-hover-text);
     }
 
-    a {
-      color: var(--color-accent);
+    nav a.current {
+      background-color: #ececeb;
+      font-weight: 600;
     }
 
-    .contact {
-      color: oklch(40% 0.02 240);
-      margin-bottom: 1.5rem;
+    nav a.current:hover {
+      background-color: var(--color-accent);
     }
 
-    .meta {
-      color: oklch(45% 0.02 240);
-      font-size: 0.95rem;
+    .content {
+      padding: 2rem 1rem;
+    }
+
+    h1 {
+      margin-top: 0;
+    }
+
+    img {
+      max-width: 300px;
+      width: 100%;
+      height: auto;
+      margin-top: 1rem;
+      border-radius: 12px;
+      display: block;
     }
   </style>
 </head>

@@ -7,7 +7,11 @@
 
   <style>
     html {
-      --color-accent: oklch(65% 50% 0);
+      --color-accent: rgba(186, 206, 215, 1);
+      --color-nav-bg: #f7f7f5;
+      --color-border: #e5e5e0;
+      --color-text: #37352f;
+      --color-hover-text: #1f2937;
       accent-color: var(--color-accent);
     }
 
@@ -15,71 +19,73 @@
       font-family: Arial, sans-serif;
       line-height: 1.6;
       max-width: 100ch;
-      margin-inline: auto;
-      padding: 1rem;
-    }
-
-    nav ul,
-    nav li {
-      display: contents;
+      margin: 0 auto;
+      padding: 0;
+      color: var(--color-text);
+      background: white;
     }
 
     nav {
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      background-color: var(--color-nav-bg);
+      border-bottom: 1px solid var(--color-border);
+      padding: 0.5rem 1rem;
+    }
+
+    nav ul {
+      list-style: none;
       display: flex;
-      margin-bottom: 1rem;
-      border-bottom: 1px solid oklch(80% 3% 200);
+      justify-content: center;
+      gap: 0.5rem;
+      margin: 0;
+      padding: 0;
+    }
+
+    nav li {
+      display: block;
     }
 
     nav a {
-      flex: 1;
+      display: inline-block;
       text-decoration: none;
-      color: inherit;
-      text-align: center;
-      padding: 0.5em;
-    }
-
-    nav a.current {
-      border-bottom: 0.4em solid oklch(80% 3% 200);
-      padding-bottom: 0.1em;
+      color: var(--color-text);
+      padding: 0.55rem 1rem;
+      border-radius: 0.5rem;
+      transition: background-color 0.2s ease, color 0.2s ease;
+      font-size: 0.95rem;
     }
 
     nav a:hover {
-      border-bottom: 0.4em solid var(--color-accent);
-      padding-bottom: 0.1em;
+      background-color: var(--color-accent);
+      color: var(--color-hover-text);
     }
 
-    form {
-      display: grid;
-      grid-template-columns: auto 1fr;
-      gap: 1em;
+    nav a.current {
+      background-color: #ececeb;
+      font-weight: 600;
     }
 
-    label {
-      display: grid;
-      grid-template-columns: subgrid;
-      grid-column: 1 / -1;
-      align-items: center;
+    nav a.current:hover {
+      background-color: var(--color-accent);
     }
 
-    input,
-    textarea,
-    button {
-      font: inherit;
+    .content {
+      padding: 2rem 1rem;
     }
 
-    input,
-    textarea {
+    h1 {
+      margin-top: 0;
+    }
+
+    img {
+      max-width: 300px;
       width: 100%;
-      box-sizing: border-box;
-    }
-
-    button {
-      grid-column: 1 / -1;
-      justify-self: start;
-    }
-
-    textarea {
-      min-height: 6em;
+      height: auto;
+      margin-top: 1rem;
+      border-radius: 12px;
+      display: block;
     }
   </style>
 </head>

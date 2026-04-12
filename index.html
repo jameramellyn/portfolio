@@ -7,69 +7,300 @@
 
   <style>
     html {
-      --color-accent: oklch(65% 50% 0);
+      --color-accent: rgba(186, 206, 215, 1);
+      --color-nav-bg: #f7f7f5;
+      --color-border: #e5e5e0;
+      --color-text: #37352f;
+      --color-muted: #6b6b6b;
+      --color-section-bg: #fafaf9;
       accent-color: var(--color-accent);
+      scroll-behavior: smooth;
+    }
+
+    * {
+      box-sizing: border-box;
     }
 
     body {
-      font-family: Arial, sans-serif;
+      margin: 0;
+      font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
       line-height: 1.6;
-      max-width: 100ch;
-      margin-inline: auto;
-      padding: 1rem;
-    }
-
-    nav ul,
-    nav li {
-      display: contents;
+      color: var(--color-text);
+      background: white;
     }
 
     nav {
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      background-color: var(--color-nav-bg);
+      border-bottom: 1px solid var(--color-border);
+      padding: 0.5rem 1rem;
+    }
+
+    nav ul {
+      list-style: none;
       display: flex;
-      margin-bottom: 1rem;
-      border-bottom: 1px solid oklch(80% 3% 200);
+      justify-content: center;
+      gap: 0.5rem;
+      margin: 0;
+      padding: 0;
+      flex-wrap: wrap;
     }
 
     nav a {
-      flex: 1;
+      display: inline-block;
       text-decoration: none;
-      color: inherit;
-      text-align: center;
-      padding: 0.5em;
-    }
-
-    nav a.current {
-      border-bottom: 0.4em solid oklch(80% 3% 200);
-      padding-bottom: 0.1em;
+      color: var(--color-text);
+      padding: 0.55rem 1rem;
+      border-radius: 0.5rem;
+      transition: background-color 0.2s ease, color 0.2s ease;
+      font-size: 0.95rem;
     }
 
     nav a:hover {
-      border-bottom: 0.4em solid var(--color-accent);
-      padding-bottom: 0.1em;
+      background-color: var(--color-accent);
+      color: #1f2937;
     }
 
-    img {
-      max-width: 300px;
+    nav a.current {
+      background-color: #ececeb;
+      font-weight: 600;
+    }
+
+    nav a.current:hover {
+      background-color: var(--color-accent);
+    }
+
+    section {
+      padding: 4rem 1.5rem;
+    }
+
+    .hero {
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      position: relative;
+      padding: 2rem;
+      background: url("images/IMG_1749.JPG") center / cover no-repeat;
+      overflow: hidden;
+    }
+
+    .hero::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: rgba(0, 0, 0, 0.35);
+      z-index: 0;
+    }
+
+    .hero-content {
+      position: relative;
+      z-index: 1;
+      color: white;
+      text-align: center;
+      max-width: 800px;
+      padding: 0 1rem;
+    }
+
+    .hero-content h1 {
+      font-size: clamp(2.8rem, 7vw, 5.5rem);
+      margin: 0;
+      letter-spacing: -0.04em;
+      line-height: 1;
+      text-shadow: 0 4px 18px rgba(0, 0, 0, 0.25);
+    }
+
+    .hero-content p {
+      margin-top: 1rem;
+      font-size: 1.15rem;
+      opacity: 0.95;
+      letter-spacing: 0.01em;
+      text-shadow: 0 2px 10px rgba(0, 0, 0, 0.25);
+    }
+
+    .scroll-arrow {
+      position: absolute;
+      bottom: 2rem;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 28px;
+      height: 28px;
+      z-index: 1;
+      opacity: 0.85;
+      transition: transform 0.2s ease, opacity 0.2s ease;
+    }
+
+    .scroll-arrow::before {
+      content: "";
+      display: block;
+      width: 16px;
+      height: 16px;
+      margin: 0 auto;
+      border-right: 2px solid white;
+      border-bottom: 2px solid white;
+      transform: rotate(45deg);
+    }
+
+    .scroll-arrow:hover {
+      transform: translateX(-50%) translateY(4px);
+      opacity: 1;
+    }
+
+    .about {
+      background: var(--color-section-bg);
+      border-top: 1px solid var(--color-border);
+    }
+
+    .about-container {
+      max-width: 1000px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 1fr 1.2fr;
+      gap: 3rem;
+      align-items: center;
+    }
+
+    .about img {
       width: 100%;
-      height: auto;
+      max-width: 350px;
+      border-radius: 18px;
+      display: block;
+      margin: 0 auto;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+    }
+
+    .about-text h2 {
+      margin-top: 0;
+      font-size: 2rem;
+    }
+
+    .about-text p {
+      font-size: 1rem;
+      color: #444;
+      margin-bottom: 1rem;
+    }
+
+    .fade-section {
+      opacity: 0;
+      transform: translateY(32px);
+      transition: opacity 0.8s ease, transform 0.8s ease;
+      will-change: opacity, transform;
+    }
+
+    .fade-section.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    @media (max-width: 768px) {
+      .about-container {
+        grid-template-columns: 1fr;
+        text-align: center;
+      }
+
+      .hero-content h1 {
+        font-size: clamp(2.4rem, 11vw, 4rem);
+      }
+
+      .hero-content p {
+        font-size: 1rem;
+      }
+
+      .about-text h2 {
+        font-size: 1.7rem;
+      }
     }
   </style>
 </head>
 
 <body>
-  <h1>Jamera Mellyn Fernando</h1>
-  <p>UCSD Data Scientist with an interest in machine learning and neuroscience. I also love art!</p>
-
   <nav>
     <ul>
-      <li><a href="./" class="current">Home</a></li>
-      <li><a href="https://github.com/jameramellyn" target="_blank">Github</a></li>
-      <li><a href="contact/">Contact</a></li>
+      <li><a href="#home" class="nav-link current">Home</a></li>
+      <li><a href="#about" class="nav-link">About</a></li>
       <li><a href="projects/">Projects</a></li>
       <li><a href="resume/">Resume</a></li>
+      <li><a href="contact/">Contact</a></li>
+      <li><a href="https://github.com/jameramellyn" target="_blank">Github</a></li>
     </ul>
   </nav>
 
-  <img src="images/IMG_3973.JPG" alt="Portrait of Jamera Fernando">
+  <section id="home" class="hero fade-section">
+    <div class="hero-content">
+      <h1>Jamera Mellyn Fernando</h1>
+      <p>Data Science • Neuroscience • Design</p>
+    </div>
+
+    <a href="#about" class="scroll-arrow" aria-label="Scroll down"></a>
+  </section>
+
+  <section id="about" class="about fade-section">
+    <div class="about-container">
+      <div class="about-image">
+        <img src="images/IMG_3973.JPG" alt="Portrait of Jamera Fernando">
+      </div>
+
+      <div class="about-text">
+        <h2>About Me</h2>
+        <p>
+          Hi, I’m Jamera. I’m a student at UC San Diego studying Data Science, with interests in machine learning,
+          neuroscience, and building meaningful technology that connects analysis with real-world impact.
+        </p>
+        <p>
+          I enjoy working across both technical and creative spaces, whether that means developing data-driven projects,
+          exploring research, or designing experiences that feel thoughtful and personal.
+        </p>
+        <p>
+          Outside of academics, I also love art and design, which continues to shape how I think about problem-solving,
+          storytelling, and the way I present my work.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <script>
+    const fadeSections = document.querySelectorAll('.fade-section');
+
+    const fadeObserver = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+        }
+      });
+    }, {
+      threshold: 0.15
+    });
+
+    fadeSections.forEach((section) => {
+      fadeObserver.observe(section);
+    });
+
+    const sections = document.querySelectorAll('section[id]');
+    const navLinks = document.querySelectorAll('.nav-link');
+
+    const navObserver = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          const activeId = entry.target.getAttribute('id');
+
+          navLinks.forEach((link) => {
+            link.classList.remove('current');
+            if (link.getAttribute('href') === `#${activeId}`) {
+              link.classList.add('current');
+            }
+          });
+        }
+      });
+    }, {
+      threshold: 0.55
+    });
+
+    sections.forEach((section) => {
+      navObserver.observe(section);
+    });
+  </script>
 </body>
 </html>
