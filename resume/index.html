@@ -4,121 +4,172 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Resume</title>
+
+  <style>
+    html {
+      --color-accent: oklch(65% 50% 0);
+      accent-color: var(--color-accent);
+    }
+
+    body {
+      font-family: Arial, sans-serif;
+      line-height: 1.5;
+      max-width: 90ch;
+      margin-inline: auto;
+      padding: 1rem;
+    }
+
+    h1, h2, h3, h4, h5, h6 {
+      line-height: 1.1;
+      text-wrap: balance;
+    }
+
+    h1 {
+      font-size: 3rem;
+      margin-bottom: 0.25rem;
+    }
+
+    h2 {
+      font-size: 1.4rem;
+      margin-top: 2rem;
+      margin-bottom: 0.75rem;
+      padding-bottom: 0.2rem;
+      border-bottom: 2px solid oklch(85% 3% 200);
+    }
+
+    h3 {
+      font-size: 1.05rem;
+      margin: 0;
+    }
+
+    p {
+      margin: 0.35rem 0;
+    }
+
+    ul {
+      margin: 0.5rem 0 0 1.25rem;
+      padding: 0;
+    }
+
+    li {
+      margin-bottom: 0.4rem;
+    }
+
+    section {
+      margin-bottom: 1.5rem;
+    }
+
+    article {
+      margin-bottom: 1.5rem;
+    }
+
+    nav ul,
+    nav li {
+      display: contents;
+    }
+
+    nav {
+      display: flex;
+      margin-bottom: 1.5rem;
+      border-bottom: 1px solid oklch(80% 3% 200);
+    }
+
+    nav a {
+      flex: 1;
+      text-decoration: none;
+      color: inherit;
+      text-align: center;
+      padding: 0.5em;
+    }
+
+    nav a.current {
+      border-bottom: 0.4em solid oklch(80% 3% 200);
+      padding-bottom: 0.1em;
+    }
+
+    nav a:hover {
+      border-bottom: 0.4em solid var(--color-accent);
+      padding-bottom: 0.1em;
+    }
+
+    a {
+      color: var(--color-accent);
+    }
+
+    .contact {
+      color: oklch(40% 0.02 240);
+      margin-bottom: 1.5rem;
+    }
+
+    .meta {
+      color: oklch(45% 0.02 240);
+      font-size: 0.95rem;
+    }
+  </style>
 </head>
 
 <body>
-    <h1>Jamera Mellyn Fernando</h1>
-    <nav>
-        <ul>
-          <li><a href="../">Home</a></li>
-          <li><a href="https://github.com/jameramellyn" target="_blank">Github</a></li>
-          <li><a href="../contact/">Contact</a></li>
-          <li><a href="../projects/">Projects</a></li>
-          <li><a href="../resume/">Resume</a></li>
-        </ul>
-      </nav>
+  <h1>Jamera Mellyn Fernando</h1>
 
-    <p>
-      (714) 478-4422 |
-      <a href="mailto:jameramellyn@gmail.com">jameramellyn@gmail.com</a> |
-      <a href="#">LinkedIn</a> |
-      <a href="#">GitHub</a>
-    </p>
-    
-    <section>
-      <h2>Education</h2>
-      <p><strong>University of California, San Diego</strong> — <time datetime="2027">Spring 2027</time></p>
-      <p>Bachelor of Science in Data Science, Minor in Cognitive Science</p>
-      <p>GPA: 3.65/4.0</p>
-      <p>Relevant Courses: Intro to Data Management, Data Science in Practice, Data Structures and Algorithms</p>
-    </section>
-    
-    <section>
-      <h2>Skills</h2>
+  <nav>
+    <ul>
+      <li><a href="../">Home</a></li>
+      <li><a href="https://github.com/jameramellyn" target="_blank">Github</a></li>
+      <li><a href="../contact/">Contact</a></li>
+      <li><a href="../projects/">Projects</a></li>
+      <li><a href="../resume/" class="current">Resume</a></li>
+    </ul>
+  </nav>
+
+  <p class="contact">
+    (714) 478-4422 |
+    <a href="mailto:jameramellyn@gmail.com">jameramellyn@gmail.com</a> |
+    <a href="#">LinkedIn</a> |
+    <a href="#">GitHub</a>
+  </p>
+
+  <section>
+    <h2>Education</h2>
+    <p><strong>University of California, San Diego</strong> — <time datetime="2027">Spring 2027</time></p>
+    <p>Bachelor of Science in Data Science, Minor in Cognitive Science</p>
+    <p>GPA: 3.65/4.0</p>
+    <p>Relevant Courses: Intro to Data Management, Data Science in Practice, Data Structures and Algorithms</p>
+  </section>
+
+  <section>
+    <h2>Skills</h2>
+    <ul>
+      <li><strong>Languages & Frameworks:</strong> Python, Java, JavaScript, R, React, React Native, Node.js, Express</li>
+      <li><strong>Data & Cloud:</strong> SQL (PostgreSQL, MySQL), MongoDB, AWS (Lambda, S3, API Gateway, EC2), Firebase, Docker, REST APIs</li>
+      <li><strong>Data Science & ML:</strong> Regression, A/B Testing, Time Series (Prophet), TensorFlow, PyTorch</li>
+    </ul>
+  </section>
+
+  <section>
+    <h2>Work Experience</h2>
+
+    <article>
+      <h3>HDSI Lab 3.0 Fellowship — Data Science Lab Assistant</h3>
+      <p class="meta">La Jolla | <time datetime="2025-10">Oct 2025 - Present</time></p>
       <ul>
-        <li><strong>Languages & Frameworks:</strong> Python, Java, JavaScript, R, React, React Native, Node.js, Express</li>
-        <li><strong>Data & Cloud:</strong> SQL (PostgreSQL, MySQL), MongoDB, AWS (Lambda, S3, API Gateway, EC2), Firebase, Docker, REST APIs</li>
-        <li><strong>Data Science & ML:</strong> Regression, A/B Testing, Time Series (Prophet), TensorFlow, PyTorch</li>
+        <li>Designed data-driven microcontroller projects integrating hardware and software systems.</li>
+        <li>Collected, cleaned, and analyzed 2000+ GPS data points.</li>
+        <li>Led bi-weekly workshops for 30-50 K-12 students.</li>
       </ul>
-    </section>
-    
-    <section>
-      <h2>Work Experience</h2>
-    
-      <article>
-        <h3>HDSI Lab 3.0 Fellowship — Data Science Lab Assistant</h3>
-        <p>La Jolla | <time>Oct 2025 - Present</time></p>
-        <ul>
-          <li>Designed data-driven microcontroller projects integrating hardware and software systems.</li>
-          <li>Collected, cleaned, and analyzed 2000+ GPS data points.</li>
-          <li>Led bi-weekly workshops for 30-50 K-12 students.</li>
-        </ul>
-      </article>
-    
-      <article>
-        <h3>Out of the Blue — Project Manager</h3>
-        <p>Remote | <time>Jan 2026 - Present</time></p>
-        <ul>
-          <li>Delivered analytics platform with semantic layer, dashboards, and visualizations.</li>
-          <li>Built dashboard features including filtering and drill-downs.</li>
-          <li>Led roadmap execution translating client requirements into production systems.</li>
-        </ul>
-      </article>
-    
-      <article>
-        <h3>Out of the Blue — Data Tech Consultant</h3>
-        <p><time>Apr 2025 - Jun 2025</time></p>
-        <ul>
-          <li>Built Prophet time-series models for anomaly detection.</li>
-          <li>Classified anomalies into 6 funnel scenarios for root-cause analysis.</li>
-          <li>Managed dashboard development for improved data visualization.</li>
-        </ul>
-      </article>
-    
-      <article>
-        <h3>Rimble — Data Science Intern</h3>
-        <p>Berkeley | <time>Jun 2025 - Aug 2025</time></p>
-        <ul>
-          <li>Analyzed backend data pipelines for esports platforms.</li>
-          <li>Validated S3 workflows for structured JSON delivery.</li>
-          <li>Optimized 50+ AWS Lambda functions.</li>
-        </ul>
-      </article>
-    
-    </section>
-    
-    <section>
-      <h2>Projects</h2>
-    
-      <article>
-        <h3>Low Price Center Website</h3>
-        <p><time>Dec 2025 - Present</time></p>
-        <ul>
-          <li>Led full-stack development of user profile features.</li>
-          <li>Extended MongoDB schemas for personalization.</li>
-          <li>Built backend APIs for profile updates and product retrieval.</li>
-        </ul>
-      </article>
-    
-      <article>
-        <h3>Predictive Modeling for Food Ratings</h3>
-        <p><time>Dec 2025</time></p>
-        <ul>
-          <li>Analyzed 20,000+ record dataset.</li>
-          <li>Built and evaluated ML models.</li>
-          <li>Assessed bias and ethical implications.</li>
-        </ul>
-      </article>
-    
-      <article>
-        <h3>OnWise — CalHacks</h3>
-        <p><time>Oct 2025</time></p>
-        <ul>
-          <li>Developed app to improve digital media literacy.</li>
-          <li>Built React Native interface simulating social media.</li>
-        </ul>
-      </article>
-    
-    </section>
-    
-    </body>
+    </article>
+
+    <article>
+      <h3>Out of the Blue — Project Manager</h3>
+      <p class="meta">Remote | <time datetime="2026-01">Jan 2026 - Present</time></p>
+      <ul>
+        <li>Delivered analytics platform with semantic layer, dashboards, and visualizations.</li>
+        <li>Built dashboard features including filtering and drill-downs.</li>
+        <li>Led roadmap execution translating client requirements into production systems.</li>
+      </ul>
+    </article>
+
+    <article>
+      <h3>Out of the Blue — Data Tech Consultant</h3>
+      <p class="meta">Remote | <time datetime="2025-04">Apr 2025</time> - <time datetime="2025-06">Jun 2025</time></p>
+      <ul>
+        <li>Built Prophet time-series models for 

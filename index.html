@@ -4,22 +4,35 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Jamera Fernando Portfolio</title>
-</head>
 
-<body>
-  <h1>Jamera Mellyn Fernando</h1>
-  <p>UCSD Data Scientist with an interest in machine learning and neuroscience. I also love art!</p>
+  <style>
+    html {
+      --color-accent: oklch(65% 50% 0);
+      accent-color: var(--color-accent);
+    }
 
-  <nav>
-    <ul>
-      <li><a href="./">Home</a></li>
-      <li><a href="https://github.com/jameramellyn" target="_blank">Github</a></li>
-      <li><a href="contact/">Contact</a></li>
-      <li><a href="projects/">Projects</a></li>
-      <li><a href="resume/">Resume</a></li>
-    </ul>
-  </nav>
+    body {
+      font-family: Arial, sans-serif;
+      line-height: 1.6;
+      max-width: 100ch;
+      margin-inline: auto;
+      padding: 1rem;
+    }
 
-  <img src="images/IMG_3973.JPG" style="max-width: 300px; width: 100%; height: auto;">
-</body>
-</html>
+    nav ul,
+    nav li {
+      display: contents;
+    }
+
+    nav {
+      display: flex;
+      margin-bottom: 1rem;
+      border-bottom: 1px solid oklch(80% 3% 200);
+    }
+
+    nav a {
+      flex: 1;
+      text-decoration: none;
+      color: inherit;
+      text-align: center;
+      paddin

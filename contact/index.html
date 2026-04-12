@@ -4,31 +4,50 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Contact</title>
-</head>
-<body>
-  <h1>Contact</h1>
 
-  <nav>
-    <ul>
-      <li><a href="../">Home</a></li>
-      <li><a href="https://github.com/jameramellyn" target="_blank">Github</a></li>
-      <li><a href="../contact/">Contact</a></li>
-      <li><a href="../projects/">Projects</a></li>
-      <li><a href="../resume/">Resume</a></li>
-    </ul>
-  </nav>
+  <style>
+    html {
+      --color-accent: oklch(65% 50% 0);
+      accent-color: var(--color-accent);
+    }
 
-  <form action="mailto:jameramellyn@gmail.com" method="post" enctype="text/plain">
-    <label for="email">Email:</label><br>
-    <input id="email" name="email" type="email" value="test@example.com"><br><br>
+    body {
+      font-family: Arial, sans-serif;
+      line-height: 1.6;
+      max-width: 100ch;
+      margin-inline: auto;
+      padding: 1rem;
+    }
 
-    <label for="subject">Subject:</label><br>
-    <input id="subject" name="subject" value="Test Subject"><br><br>
+    nav ul,
+    nav li {
+      display: contents;
+    }
 
-    <label for="body">Message:</label><br>
-    <textarea id="body" name="body">This is a test message.</textarea><br><br>
+    nav {
+      display: flex;
+      margin-bottom: 1rem;
+      border-bottom: 1px solid oklch(80% 3% 200);
+    }
 
-    <button>Submit</button>
-  </form>
-</body>
-</html>
+    nav a {
+      flex: 1;
+      text-decoration: none;
+      color: inherit;
+      text-align: center;
+      padding: 0.5em;
+    }
+
+    nav a.current {
+      border-bottom: 0.4em solid oklch(80% 3% 200);
+      padding-bottom: 0.1em;
+    }
+
+    nav a:hover {
+      border-bottom: 0.4em solid var(--color-accent);
+      padding-bottom: 0.1em;
+    }
+
+    form {
+      display: grid;
+      grid-template-column

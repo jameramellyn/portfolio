@@ -4,26 +4,36 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Projects</title>
-</head>
 
-<body>
-  <h1>Projects</h1>
+  <style>
+    html {
+      --color-accent: oklch(65% 50% 0);
+      accent-color: var(--color-accent);
+    }
 
-  <nav>
-    <ul>
-      <li><a href="../">Home</a></li>
-      <li><a href="https://github.com/jameramellyn" target="_blank">Github</a></li>
-      <li><a href="../contact/">Contact</a></li>
-      <li><a href="../projects/">Projects</a></li>
-      <li><a href="../resume/">Resume</a></li>
-    </ul>
-  </nav>
+    body {
+      font-family: Arial, sans-serif;
+      line-height: 1.6;
+      max-width: 100ch;
+      margin-inline: auto;
+      padding: 1rem;
+    }
 
-  <p>Here are some of my projects:</p>
-  <ul>
-    <li>Low Price Center Website</li>
-    <li>Predictive Modeling for Food Ratings</li>
-    <li>OnWise — CalHacks</li>
-  </ul>
-</body>
-</html>
+    h1, h2, h3, h4, h5, h6 {
+      line-height: 1.1;
+      text-wrap: balance;
+    }
+
+    h1 {
+      font-size: 400%;
+    }
+
+    nav ul,
+    nav li {
+      display: contents;
+    }
+
+    nav {
+      display: flex;
+      margin-bottom: 1rem;
+      border-bottom: 1px solid 
