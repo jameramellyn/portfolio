@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Contact</title>
+  <title>Contact | Jamera Fernando</title>
 
   <style>
     html {
@@ -11,16 +11,20 @@
       --color-nav-bg: #f7f7f5;
       --color-border: #e5e5e0;
       --color-text: #37352f;
-      --color-hover-text: #1f2937;
+      --color-muted: #6b6b6b;
+      --color-section-bg: #fafaf9;
       accent-color: var(--color-accent);
+      scroll-behavior: smooth;
+    }
+
+    * {
+      box-sizing: border-box;
     }
 
     body {
-      font-family: Arial, sans-serif;
+      margin: 0;
+      font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
       line-height: 1.6;
-      max-width: 100ch;
-      margin: 0 auto;
-      padding: 0;
       color: var(--color-text);
       background: white;
     }
@@ -29,7 +33,8 @@
       position: sticky;
       top: 0;
       z-index: 1000;
-      background-color: var(--color-nav-bg);
+      background-color: rgba(247, 247, 245, 0.88);
+      backdrop-filter: blur(8px);
       border-bottom: 1px solid var(--color-border);
       padding: 0.5rem 1rem;
     }
@@ -41,10 +46,7 @@
       gap: 0.5rem;
       margin: 0;
       padding: 0;
-    }
-
-    nav li {
-      display: block;
+      flex-wrap: wrap;
     }
 
     nav a {
@@ -59,7 +61,7 @@
 
     nav a:hover {
       background-color: var(--color-accent);
-      color: var(--color-hover-text);
+      color: #1f2937;
     }
 
     nav a.current {
@@ -71,54 +73,163 @@
       background-color: var(--color-accent);
     }
 
-    .content {
-      padding: 2rem 1rem;
+    .page-header {
+      padding: 5rem 1.5rem 2rem;
+      text-align: center;
+      background: linear-gradient(to bottom, #fafaf9, white);
+      border-bottom: 1px solid var(--color-border);
     }
 
-    h1 {
-      margin-top: 0;
+    .page-header h1 {
+      margin: 0;
+      font-size: clamp(2.5rem, 7vw, 4.3rem);
+      letter-spacing: -0.04em;
+      line-height: 1;
     }
 
-    img {
-      max-width: 300px;
-      width: 100%;
-      height: auto;
-      margin-top: 1rem;
-      border-radius: 12px;
+    .page-header p {
+      margin: 1rem auto 0;
+      max-width: 680px;
+      color: var(--color-muted);
+      font-size: 1.05rem;
+    }
+
+    .contact-wrapper {
+      max-width: 760px;
+      margin: 0 auto;
+      padding: 2.5rem 1.5rem 5rem;
+    }
+
+    .contact-card {
+      background: var(--color-section-bg);
+      border: 1px solid var(--color-border);
+      border-radius: 18px;
+      padding: 1.75rem;
+      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.03);
+    }
+
+    form {
+      display: grid;
+      gap: 1.2rem;
+    }
+
+    label {
       display: block;
+    }
+
+    label span {
+      display: block;
+      margin-bottom: 0.45rem;
+      font-size: 0.95rem;
+      font-weight: 600;
+      color: var(--color-text);
+    }
+
+    input,
+    textarea {
+      width: 100%;
+      padding: 0.9rem 1rem;
+      border: 1px solid var(--color-border);
+      border-radius: 12px;
+      font: inherit;
+      color: var(--color-text);
+      background: white;
+      transition: border-color 0.2s ease, box-shadow 0.2s ease;
+    }
+
+    input:focus,
+    textarea:focus {
+      outline: none;
+      border-color: rgba(186, 206, 215, 1);
+      box-shadow: 0 0 0 4px rgba(186, 206, 215, 0.2);
+    }
+
+    textarea {
+      min-height: 160px;
+      resize: vertical;
+    }
+
+    button {
+      appearance: none;
+      border: none;
+      border-radius: 12px;
+      padding: 0.9rem 1.2rem;
+      font: inherit;
+      font-weight: 600;
+      color: var(--color-text);
+      background: #ececeb;
+      cursor: pointer;
+      transition: background-color 0.2s ease, transform 0.2s ease;
+    }
+
+    button:hover {
+      background: var(--color-accent);
+      transform: translateY(-1px);
+    }
+
+    .contact-note {
+      margin-top: 1rem;
+      color: var(--color-muted);
+      font-size: 0.95rem;
+      text-align: center;
+    }
+
+    @media (max-width: 768px) {
+      .page-header {
+        padding-top: 4rem;
+      }
+
+      .contact-card {
+        padding: 1.25rem;
+      }
     }
   </style>
 </head>
 <body>
-  <h1>Contact</h1>
-
   <nav>
     <ul>
       <li><a href="../">Home</a></li>
-      <li><a href="https://github.com/jameramellyn" target="_blank">Github</a></li>
-      <li><a href="../contact/" class="current">Contact</a></li>
+      <li><a href="../#about">About</a></li>
       <li><a href="../projects/">Projects</a></li>
       <li><a href="../resume/">Resume</a></li>
+      <li><a href="../contact/" class="current">Contact</a></li>
+      <li><a href="https://github.com/jameramellyn" target="_blank">Github</a></li>
     </ul>
   </nav>
 
-  <form action="mailto:jameramellyn@gmail.com" method="post" enctype="text/plain">
-    <label>
-      <span>Email:</span>
-      <input id="email" name="email" type="email" value="test@example.com">
-    </label>
+  <header class="page-header">
+    <h1>Contact</h1>
+    <p>
+      Feel free to reach out for opportunities, collaborations, or just to connect.
+    </p>
+  </header>
 
-    <label>
-      <span>Subject:</span>
-      <input id="subject" name="subject" value="Test Subject">
-    </label>
+  <main class="contact-wrapper">
+    <div class="contact-card">
+      <form action="mailto:jameramellyn@gmail.com" method="post" enctype="text/plain">
+        <label for="email">
+          <span>Email</span>
+          <input id="email" name="email" type="email" placeholder="your.email@example.com">
+        </label>
 
-    <label>
-      <span>Message:</span>
-      <textarea id="body" name="body">This is a test message.</textarea>
-    </label>
+        <label for="subject">
+          <span>Subject</span>
+          <input id="subject" name="subject" type="text" placeholder="What would you like to talk about?">
+        </label>
 
-    <button>Submit</button>
-  </form>
+        <label for="body">
+          <span>Message</span>
+          <textarea id="body" name="body" placeholder="Write your message here..."></textarea>
+        </label>
+
+        <button type="submit">Send Message</button>
+      </form>
+
+      <p class="contact-note">
+        Or email me directly at
+        <a href="mailto:jameramellyn@gmail.com">jameramellyn@gmail.com</a>.
+      </p>
+    </div>
+  </main>
 </body>
 </html>

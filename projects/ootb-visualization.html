@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Out of the Blue Visualization Layer | Jamera Fernando</title>
+
+  <style>
+    html {
+      --color-accent: rgba(186, 206, 215, 1);
+      --color-nav-bg: #f7f7f5;
+      --color-border: #e5e5e0;
+      --color-text: #37352f;
+      --color-muted: #6b6b6b;
+      --color-section-bg: #fafaf9;
+      accent-color: var(--color-accent);
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      line-height: 1.6;
+      color: var(--color-text);
+      background: white;
+    }
+
+    nav {
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      background-color: rgba(247, 247, 245, 0.88);
+      backdrop-filter: blur(8px);
+      border-bottom: 1px solid var(--color-border);
+      padding: 0.5rem 1rem;
+    }
+
+    nav ul {
+      list-style: none;
+      display: flex;
+      justify-content: center;
+      gap: 0.5rem;
+      margin: 0;
+      padding: 0;
+      flex-wrap: wrap;
+    }
+
+    nav a {
+      text-decoration: none;
+      color: var(--color-text);
+      padding: 0.55rem 1rem;
+      border-radius: 0.5rem;
+      font-size: 0.95rem;
+      transition: 0.2s;
+    }
+
+    nav a:hover {
+      background-color: var(--color-accent);
+      color: #1f2937;
+    }
+
+    nav a.current {
+      background-color: #ececeb;
+      font-weight: 600;
+    }
+
+    .page-header {
+      padding: 5rem 1.5rem 2.5rem;
+      text-align: center;
+      background: linear-gradient(to bottom, #fafaf9, white);
+      border-bottom: 1px solid var(--color-border);
+    }
+
+    .page-header h1 {
+      margin: 0;
+      font-size: clamp(2.5rem, 7vw, 4.3rem);
+      letter-spacing: -0.04em;
+    }
+
+    .page-header p {
+      margin-top: 1rem;
+      color: var(--color-muted);
+      max-width: 720px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .project-wrapper {
+      max-width: 950px;
+      margin: 0 auto;
+      padding: 2.5rem 1.5rem 5rem;
+    }
+
+    .project-card,
+    .project-section {
+      background: var(--color-section-bg);
+      border: 1px solid var(--color-border);
+      border-radius: 18px;
+      padding: 1.5rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .project-section h2 {
+      margin-top: 0;
+      font-size: 1.35rem;
+    }
+
+    .meta {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.6rem;
+      margin-top: 1rem;
+    }
+
+    .meta span {
+      background: white;
+      border: 1px solid var(--color-border);
+      border-radius: 999px;
+      padding: 0.35rem 0.75rem;
+      font-size: 0.9rem;
+      color: var(--color-muted);
+    }
+
+    .screenshot {
+      width: 100%;
+      border-radius: 14px;
+      border: 1px solid var(--color-border);
+      margin-top: 1rem;
+    }
+
+    ul {
+      margin: 0.75rem 0 0;
+      padding-left: 1.2rem;
+    }
+
+    li + li {
+      margin-top: 0.4rem;
+    }
+
+  </style>
+</head>
+
+<body>
+
+  <nav>
+    <ul>
+      <li><a href="../">Home</a></li>
+      <li><a href="../#about">About</a></li>
+      <li><a href="../projects/" class="current">Projects</a></li>
+      <li><a href="../resume/">Resume</a></li>
+      <li><a href="../contact/">Contact</a></li>
+      <li><a href="https://github.com/jameramellyn" target="_blank">Github</a></li>
+    </ul>
+  </nav>
+
+  <header class="page-header">
+    <h1>Out of the Blue Visualization Layer</h1>
+    <p>
+      Designed and built a scalable analytics and visualization system supporting KPI dashboards,
+      anomaly detection, and interactive data exploration across multiple business workflows.
+    </p>
+  </header>
+
+  <main class="project-wrapper">
+
+    <section class="project-card">
+      <p>
+        As a Co-Project Manager alongside Himansi, I helped lead the development of a
+        data visualization layer that translated raw system metrics into structured,
+        interactive dashboards. The system enabled teams to monitor performance,
+        identify anomalies, and explore data through dynamic filtering and drill-downs.
+      </p>
+
+      <div class="meta">
+        <span>Data Systems</span>
+        <span>Analytics</span>
+        <span>Full-Stack</span>
+        <span>KPI Dashboards</span>
+      </div>
+    </section>
+
+    <section class="project-section">
+      <h2>My Role</h2>
+      <ul>
+        <li>Co-Project Manager coordinating technical and business requirements</li>
+        <li>Defined KPI structures and dashboard metrics</li>
+        <li>Led development of the visualization layer and system architecture</li>
+      </ul>
+    </section>
+
+    <section class="project-section">
+      <h2>Technical Work</h2>
+      <ul>
+        <li>Designed and built 5+ KPI dashboards with interactive filtering</li>
+        <li>Implemented a semantic query layer for flexible data exploration</li>
+        <li>Integrated time-series anomaly detection using Prophet</li>
+        <li>Developed backend APIs to support data retrieval and aggregation</li>
+      </ul>
+    </section>
+
+    <section class="project-section">
+      <h2>Impact</h2>
+      <ul>
+        <li>Enabled faster identification of anomalies across system metrics</li>
+        <li>Improved clarity and interpretability of complex datasets</li>
+        <li>Structured raw data into meaningful, decision-ready insights</li>
+      </ul>
+    </section>
+
+    <section class="project-section">
+      <h2>Project Preview</h2>
+      <img src="../images/ootb_visualization.png" alt="Visualization Layer Preview" class="screenshot">
+    </section>
+
+  </main>
+
+</body>
+</html>
