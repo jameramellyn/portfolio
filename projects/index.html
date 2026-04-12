@@ -29,4 +29,151 @@
       position: sticky;
       top: 0;
       z-index: 1000;
-      background-colo
+      background-color: var(--color-nav-bg);
+      border-bottom: 1px solid var(--color-border);
+      padding: 0.5rem 1rem;
+    }
+
+    nav ul {
+      list-style: none;
+      display: flex;
+      justify-content: center;
+      gap: 0.5rem;
+      margin: 0;
+      padding: 0;
+    }
+
+    nav li {
+      display: block;
+    }
+
+    nav a {
+      display: inline-block;
+      text-decoration: none;
+      color: var(--color-text);
+      padding: 0.55rem 1rem;
+      border-radius: 0.5rem;
+      transition: background-color 0.2s ease, color 0.2s ease;
+      font-size: 0.95rem;
+    }
+
+    nav a:hover {
+      background-color: var(--color-accent);
+      color: var(--color-hover-text);
+    }
+
+    nav a.current {
+      background-color: #ececeb;
+      font-weight: 600;
+    }
+
+    nav a.current:hover {
+      background-color: var(--color-accent);
+    }
+
+    .content {
+      padding: 2rem 1rem;
+    }
+
+    h1 {
+      margin-top: 0;
+    }
+
+    img {
+      max-width: 300px;
+      width: 100%;
+      height: auto;
+      margin-top: 1rem;
+      border-radius: 12px;
+      display: block;
+    }
+  </style>
+</head>
+<body>
+  <h1>Projects</h1>
+
+  <nav>
+    <ul>
+      <li><a href="../">Home</a></li>
+      <li><a href="https://github.com/jameramellyn" target="_blank">Github</a></li>
+      <li><a href="../contact/">Contact</a></li>
+      <li><a href="../projects/" class="current">Projects</a></li>
+      <li><a href="../resume/">Resume</a></li>
+    </ul>
+  </nav>
+
+  <div class="projects">
+    <article>
+      <h2>Lorem ipsum dolor sit</h2>
+      <img src="https://vis-society.github.io/labs/2/images/empty.svg" alt="">
+      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+    </article>
+
+    <article>
+      <h2>Dolor sit amet consectetur</h2>
+      <img src="https://vis-society.github.io/labs/2/images/empty.svg" alt="">
+      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+    </article>
+
+    <article>
+      <h2>Adipisicing elit sed do</h2>
+      <img src="https://vis-society.github.io/labs/2/images/empty.svg" alt="">
+      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+    </article>
+
+    <article>
+      <h2>Tempor incididunt ut labore</h2>
+      <img src="https://vis-society.github.io/labs/2/images/empty.svg" alt="">
+      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+    </article>
+
+    <article>
+      <h2>Et dolore magna aliqua</h2>
+      <img src="https://vis-society.github.io/labs/2/images/empty.svg" alt="">
+      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+    </article>
+
+    <article>
+      <h2>Ut enim ad minim</h2>
+      <img src="https://vis-society.github.io/labs/2/images/empty.svg" alt="">
+      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+    </article>
+
+    <article>
+      <h2>Veniam quis nostrud exercitation</h2>
+      <img src="https://vis-society.github.io/labs/2/images/empty.svg" alt="">
+      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+    </article>
+
+    <article>
+      <h2>Ullamco laboris nisi ut</h2>
+      <img src="https://vis-society.github.io/labs/2/images/empty.svg" alt="">
+      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+    </article>
+
+    <article>
+      <h2>Aliquip ex ea commodo</h2>
+      <img src="https://vis-society.github.io/labs/2/images/empty.svg" alt="">
+      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+    </article>
+
+    <article>
+      <h2>Duis aute irure dolor</h2>
+      <img src="https://vis-society.github.io/labs/2/images/empty.svg" alt="">
+      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+    </article>
+
+    <article>
+      <h2>In reprehenderit in voluptate</h2>
+      <img src="https://vis-society.github.io/labs/2/images/empty.svg" alt="">
+      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+    </article>
+
+    <article>
+      <h2>Velit esse cillum dolore</h2>
+      <img src="https://vis-society.github.io/labs/2/images/empty.svg" alt="">
+      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+    </article>
+  </div>
+</body>
+</html>
