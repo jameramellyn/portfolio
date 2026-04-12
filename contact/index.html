@@ -50,4 +50,69 @@
 
     form {
       display: grid;
-      grid-template-column
+      grid-template-columns: auto 1fr;
+      gap: 1em;
+    }
+
+    label {
+      display: grid;
+      grid-template-columns: subgrid;
+      grid-column: 1 / -1;
+      align-items: center;
+    }
+
+    input,
+    textarea,
+    button {
+      font: inherit;
+    }
+
+    input,
+    textarea {
+      width: 100%;
+      box-sizing: border-box;
+    }
+
+    button {
+      grid-column: 1 / -1;
+      justify-self: start;
+    }
+
+    textarea {
+      min-height: 6em;
+    }
+  </style>
+</head>
+<body>
+  <h1>Contact</h1>
+
+  <nav>
+    <ul>
+      <li><a href="../">Home</a></li>
+      <li><a href="https://github.com/jameramellyn" target="_blank">Github</a></li>
+      <li><a href="../contact/" class="current">Contact</a></li>
+      <li><a href="../projects/">Projects</a></li>
+      <li><a href="../resume/">Resume</a></li>
+    </ul>
+  </nav>
+
+  <form action="mailto:jameramellyn@gmail.com" method="post" enctype="text/plain">
+    <label>
+      <span>Email:</span>
+      <input id="email" name="email" type="email" value="test@example.com">
+    </label>
+
+    <label>
+      <span>Subject:</span>
+      <input id="subject" name="subject" value="Test Subject">
+    </label>
+
+    <label>
+      <span>Message:</span>
+      <textarea id="body" name="body">This is a test message.</textarea>
+    </label>
+
+    <button>Submit</button>
+  </form>
+</body>
+</html>

@@ -35,4 +35,41 @@
       text-decoration: none;
       color: inherit;
       text-align: center;
-      paddin
+      padding: 0.5em;
+    }
+
+    nav a.current {
+      border-bottom: 0.4em solid oklch(80% 3% 200);
+      padding-bottom: 0.1em;
+    }
+
+    nav a:hover {
+      border-bottom: 0.4em solid var(--color-accent);
+      padding-bottom: 0.1em;
+    }
+
+    img {
+      max-width: 300px;
+      width: 100%;
+      height: auto;
+    }
+  </style>
+</head>
+
+<body>
+  <h1>Jamera Mellyn Fernando</h1>
+  <p>UCSD Data Scientist with an interest in machine learning and neuroscience. I also love art!</p>
+
+  <nav>
+    <ul>
+      <li><a href="./" class="current">Home</a></li>
+      <li><a href="https://github.com/jameramellyn" target="_blank">Github</a></li>
+      <li><a href="contact/">Contact</a></li>
+      <li><a href="projects/">Projects</a></li>
+      <li><a href="resume/">Resume</a></li>
+    </ul>
+  </nav>
+
+  <img src="images/IMG_3973.JPG" alt="Portrait of Jamera Fernando">
+</body>
+</html>
