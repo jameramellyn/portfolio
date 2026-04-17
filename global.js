@@ -65,12 +65,10 @@ document.body.insertAdjacentHTML(
     document.documentElement.style.setProperty('color-scheme', scheme);
   }
   
-  // ==========================
-  // EVENT LISTENER
-  // ==========================
   
   select.addEventListener('input', function (event) {
-    console.log('color scheme changed to', event.target.value);
+    const value = event.target.value;
+    console.log('color scheme changed to', value);
   
     setColorScheme(value);
   
@@ -84,6 +82,25 @@ document.body.insertAdjacentHTML(
     setColorScheme(saved);
     select.value = saved;
   }
+
+
+
+    const form = document.querySelector('form');
+
+    form?.addEventListener('submit', function (event) {
+    event.preventDefault();
+
+    const data = new FormData(form);
+    let url = form.action + '?';
+    let params = [];
+
+    for (let [name, value] of data) {
+        params.push(`${name}=${encodeURIComponent(value)}`);
+    }
+
+    url += params.join('&');
+    location.href = url;
+    });
 
 // const $$ = (selector, context = document) =>
 //     Array.from(context.querySelectorAll(selector));
