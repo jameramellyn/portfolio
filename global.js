@@ -80,10 +80,6 @@ if ('colorScheme' in localStorage) {
   select.value = saved;
 }
 
-// ==========================
-// CONTACT FORM
-// ==========================
-
 const form = document.querySelector('form');
 
 form?.addEventListener('submit', function (event) {
