@@ -5,77 +5,74 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Jamera Fernando Portfolio</title>
 
+  <script type="module" src="/global.js"></script>
+
   <style>
     html {
       --color-accent: rgba(186, 206, 215, 1);
-      --color-nav-bg: #f7f7f5;
-      --color-border: #e5e5e0;
-      --color-text: #37352f;
-      --color-muted: #6b6b6b;
-      --color-section-bg: #fafaf9;
       accent-color: var(--color-accent);
       scroll-behavior: smooth;
+      color-scheme: light dark;
     }
 
+    .color-scheme {
+      position: absolute;
+      top: 1rem;
+      right: 1rem;
+      font-size: 80%;
+      z-index: 1001;
+    }
+
+    select {
+      font: inherit;
+      padding: 0.3rem 0.4rem;
+    }
+  
     * {
       box-sizing: border-box;
     }
-
+  
     body {
       margin: 0;
       font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
       line-height: 1.6;
-      color: var(--color-text);
-      background: white;
+      background: Canvas;
+      color: CanvasText;
     }
-
+  
     nav {
+      --border-color: oklch(50% 10% 200 / 40%);
       position: sticky;
       top: 0;
       z-index: 1000;
-      background-color: var(--color-nav-bg);
-      border-bottom: 1px solid var(--color-border);
+      backdrop-filter: blur(8px);
+      border-bottom: 1px solid var(--border-color);
       padding: 0.5rem 1rem;
     }
-
-    nav ul {
-      list-style: none;
-      display: flex;
-      justify-content: center;
-      gap: 0.5rem;
-      margin: 0;
-      padding: 0;
-      flex-wrap: wrap;
-    }
-
+  
     nav a {
       display: inline-block;
       text-decoration: none;
-      color: var(--color-text);
+      color: inherit;
       padding: 0.55rem 1rem;
       border-radius: 0.5rem;
       transition: background-color 0.2s ease, color 0.2s ease;
       font-size: 0.95rem;
     }
-
+  
     nav a:hover {
-      background-color: var(--color-accent);
-      color: #1f2937;
+      background-color: color-mix(in oklch, var(--color-accent), canvas 85%);
     }
-
+  
     nav a.current {
-      background-color: #ececeb;
+      background-color: color-mix(in oklch, var(--color-accent), canvas 80%);
       font-weight: 600;
     }
-
-    nav a.current:hover {
-      background-color: var(--color-accent);
-    }
-
+  
     section {
       padding: 4rem 1.5rem;
     }
-
+  
     .hero {
       min-height: 100vh;
       display: flex;
@@ -87,7 +84,7 @@
       background: url("images/IMG_1749.JPG") center / cover no-repeat;
       overflow: hidden;
     }
-
+  
     .hero::before {
       content: "";
       position: absolute;
@@ -95,7 +92,7 @@
       background: rgba(0, 0, 0, 0.35);
       z-index: 0;
     }
-
+  
     .hero-content {
       position: relative;
       z-index: 1;
@@ -104,7 +101,7 @@
       max-width: 800px;
       padding: 0 1rem;
     }
-
+  
     .hero-content h1 {
       font-size: clamp(2.8rem, 7vw, 5.5rem);
       margin: 0;
@@ -112,7 +109,7 @@
       line-height: 1;
       text-shadow: 0 4px 18px rgba(0, 0, 0, 0.25);
     }
-
+  
     .hero-content p {
       margin-top: 1rem;
       font-size: 1.15rem;
@@ -120,7 +117,7 @@
       letter-spacing: 0.01em;
       text-shadow: 0 2px 10px rgba(0, 0, 0, 0.25);
     }
-
+  
     .scroll-arrow {
       position: absolute;
       bottom: 2rem;
@@ -132,7 +129,7 @@
       opacity: 0.85;
       transition: transform 0.2s ease, opacity 0.2s ease;
     }
-
+  
     .scroll-arrow::before {
       content: "";
       display: block;
@@ -143,17 +140,17 @@
       border-bottom: 2px solid white;
       transform: rotate(45deg);
     }
-
+  
     .scroll-arrow:hover {
       transform: translateX(-50%) translateY(4px);
       opacity: 1;
     }
-
+  
     .about {
-      background: var(--color-section-bg);
-      border-top: 1px solid var(--color-border);
+      background: Canvas;
+      border-top: 1px solid color-mix(in oklch, CanvasText, Canvas 75%);
     }
-
+  
     .about-container {
       max-width: 1000px;
       margin: 0 auto;
@@ -162,53 +159,53 @@
       gap: 3rem;
       align-items: center;
     }
-
+  
     .about img {
       width: 100%;
       max-width: 350px;
       border-radius: 18px;
       display: block;
       margin: 0 auto;
-      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+      box-shadow: 0 10px 30px color-mix(in oklch, CanvasText, Canvas 90%);
     }
-
+  
     .about-text h2 {
       margin-top: 0;
       font-size: 2rem;
     }
-
+  
     .about-text p {
       font-size: 1rem;
-      color: #444;
+      color: color-mix(in oklch, CanvasText, Canvas 25%);
       margin-bottom: 1rem;
     }
-
+  
     .fade-section {
       opacity: 0;
       transform: translateY(32px);
       transition: opacity 0.8s ease, transform 0.8s ease;
       will-change: opacity, transform;
     }
-
+  
     .fade-section.visible {
       opacity: 1;
       transform: translateY(0);
     }
-
+  
     @media (max-width: 768px) {
       .about-container {
         grid-template-columns: 1fr;
         text-align: center;
       }
-
+  
       .hero-content h1 {
         font-size: clamp(2.4rem, 11vw, 4rem);
       }
-
+  
       .hero-content p {
         font-size: 1rem;
       }
-
+  
       .about-text h2 {
         font-size: 1.7rem;
       }
@@ -217,16 +214,14 @@
 </head>
 
 <body>
-  <nav>
-    <ul>
-      <li><a href="#home" class="nav-link current">Home</a></li>
-      <li><a href="#about" class="nav-link">About</a></li>
-      <li><a href="projects/">Projects</a></li>
-      <li><a href="resume/">Resume</a></li>
-      <li><a href="contact/">Contact</a></li>
-      <li><a href="https://github.com/jameramellyn" target="_blank">Github</a></li>
-    </ul>
-  </nav>
+  <!-- <ul>
+    <li><a href="#home" class="nav-link ">Home</a></li>
+    <li><a href="#about" class="nav-link">About</a></li>
+    <li><a href="projects/">Projects</a></li>
+    <li><a href="resume/">Resume</a></li>
+    <li><a href="contact/">Contact</a></li>
+    <li><a href="https://github.com/jameramellyn" target="_blank">Github</a></li>
+  </ul> -->
 
   <section id="home" class="hero fade-section">
     <div class="hero-content">
@@ -278,29 +273,29 @@
       fadeObserver.observe(section);
     });
 
-    const sections = document.querySelectorAll('section[id]');
-    const navLinks = document.querySelectorAll('.nav-link');
+    // const sections = document.querySelectorAll('section[id]');
+    // const navLinks = document.querySelectorAll('.nav-link');
 
-    const navObserver = new IntersectionObserver((entries) => {
-      entries.forEach((entry) => {
-        if (entry.isIntersecting) {
-          const activeId = entry.target.getAttribute('id');
+    // const navObserver = new IntersectionObserver((entries) => {
+    //   entries.forEach((entry) => {
+    //     if (entry.isIntersecting) {
+    //       const activeId = entry.target.getAttribute('id');
 
-          navLinks.forEach((link) => {
-            link.classList.remove('current');
-            if (link.getAttribute('href') === `#${activeId}`) {
-              link.classList.add('current');
-            }
-          });
-        }
-      });
-    }, {
-      threshold: 0.55
-    });
+    //       navLinks.forEach((link) => {
+    //         link.classList.remove('current');
+    //         if (link.getAttribute('href') === `#${activeId}`) {
+    //           link.classList.add('current');
+    //         }
+    //       });
+    //     }
+    //   });
+    // }, {
+    //   threshold: 0.55
+    // });
 
-    sections.forEach((section) => {
-      navObserver.observe(section);
-    });
+    // sections.forEach((section) => {
+    //   navObserver.observe(section);
+    // });
   </script>
 </body>
 </html>
