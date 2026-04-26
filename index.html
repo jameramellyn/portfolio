@@ -9,6 +9,7 @@
   <script src="index.js" type="module" defer></script>
 
 
+  
   <style>
     html {
       --color-accent: rgba(186, 206, 215, 1);
@@ -212,6 +213,58 @@
         font-size: 1.7rem;
       }
     }
+    .projects {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 1.5rem;
+    }
+
+    .projects article img {
+      width: 100%;
+      height: 150px;       /* control height */
+      object-fit: cover;   /* crops nicely */
+      border-radius: 12px;
+    }
+
+    .projects article {
+      border: 1px solid color-mix(in oklch, CanvasText, Canvas 75%);
+      border-radius: 16px;
+      padding: 1rem;
+    }
+
+    /* ==========================
+      GITHUB STATS STYLING
+      ========================== */
+
+    #profile-stats {
+      max-width: 800px;
+      margin: 1.5rem auto 0;
+      padding: 1.5rem;
+      border: 1px solid color-mix(in oklch, CanvasText, Canvas 75%);
+      border-radius: 16px;
+      background: Canvas;
+    }
+
+    #profile-stats dl {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      text-align: center;
+      gap: 0.5rem;
+      margin: 0;
+    }
+
+    #profile-stats dt {
+      grid-row: 1;
+      font-size: 0.9rem;
+      color: color-mix(in oklch, CanvasText, Canvas 40%);
+    }
+
+    #profile-stats dd {
+      grid-row: 2;
+      margin: 0;
+      font-size: 1.5rem;
+      font-weight: 600;
+    }
   </style>
 </head>
 
@@ -247,7 +300,7 @@
       <!-- Dynamically added GitHub stats go here -->
     </div>
   </section>
-  
+
   <section id="about" class="about fade-section">
     <div class="about-container">
       <div class="about-image">

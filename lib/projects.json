@@ -1,17 +1,92 @@
 [
     {
       "title": "Semantics Visualization Layer",
+      "year": "2026",
       "image": "../images/ootb_visualization.png",
       "description": "Built a scalable visualization layer and analytics system to support KPI dashboards, anomaly detection, and interactive data exploration."
     },
     {
       "title": "HDSI Lab 3.0 Website",
+      "year": "2026",
       "image": "../images/hdsi_lab.png",
       "description": "Website supporting STEM outreach and lab projects at UC San Diego."
     },
     {
       "title": "Low Price Center",
+      "year": "2026",
       "image": "../images/price_center.png",
       "description": "Full-stack marketplace platform with user profiles, listings, and backend APIs."
+    },
+    {
+        "title": "Distributed Motor Control System",
+        "year": "2026",
+        "image": "../images/distributed_motors.png",
+        "description": "Designed a motor system using ESP32 and multiplexors to control 400 motors."
+    },
+    {
+        "title": "Expository Visualization",
+        "year": "2026",
+        "image": "../images/food_health.png",
+        "description": "Developed a visualization that illustrated the differences between different grocery stores."
+    },
+    {
+        "title": "Predictive Modeling for Food Ratings",
+        "year": "2025",
+        "image": "../images/predictive_food_modeling.png",
+        "description": "Analyzed food dataset to study calorie and health patterns correlating to food origins."
+    },
+    {
+        "title": "Understanding Movie Fanatics: Sentiment Analysis",
+        "year": "2025",
+        "image": "../images/movie_sentiment.png",
+        "description": "Investigates movie reviews on Letterboxd, and determines whether VADER scores accurately reflected the star ratings users would leave on these reviews."
+    },
+    {
+        "title": "Email Automation Scraper",
+        "year": "2025",
+        "image": "../images/automated_email.png",
+        "description": "Designed an automated pipeline that scrapes companies tailored to recquirements and sends mass emails."
+    },
+    {
+        "title": "Friends: TV Show Generator",
+        "year": "2024",
+        "image": "../images/friends_reboot.png",
+        "description": "Processed, cleaned, and analyzed Friends episodes to generate new episode names."
+    },
+    {
+        "title": "Health Risk Analysis: Diabietes & High Cholesteral",
+        "year": "2024",
+        "image": "../images/Diabetes_diagnosis.png",
+        "description": "Conducted end-to-end data acquisition, cleaning, and preprocessing to evaluate health risk factors."
+    },
+    {
+        "title": "Music Recommendation System",
+        "year": "2024",
+        "image": "../images/taylor_swift.png",
+        "description": "Built a music recommendation system using collaborative filtering and content-based filtering to suggest songs based on user preferences and listening history."
+    },
+    {
+        "title": "Skin Type Predictor",
+        "year": "2024",
+        "image": "../images/skin_types.png",
+        "description": "Utilizes CNNs to analyze pictures of faces and classify by skin types."
+    },
+    {
+        "title": "Claw Machine",
+        "year": "2024",
+        "image": "../images/claw_machine.png",
+        "description": "Arduino controlled claw machine built out of an old 3-D printer."
+    },
+    {
+        "title": "RC Car",
+        "year": "2023",
+        "image": "../images/rc_car.png",
+        "description": "Arduino controlled RC Car which also can launch footballs."
+    },
+    {
+        "title": "Criminal Justice Bias Analysis",
+        "year": "2022",
+        "image": "../images/criminal_justice.png",
+        "description": "Modeled a logistic regression model predicting liklihood of recidivism among ex-convicts and tested bias."
     }
-  ]
+]
