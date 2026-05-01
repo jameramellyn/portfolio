@@ -1,16 +1,19 @@
 [
     {
         "title": "Out of the Blue Visualization Layer",
+        "year": "2026",
         "image": "/portfolio/images/ootb_visualization.png",
         "description": "Built a scalable visualization layer and analytics system to support KPI dashboards, anomaly detection, and interactive data exploration."
       },
       {
         "title": "HDSI Lab 3.0 Website",
+        "year": "2026",
         "image": "/portfolio/images/hdsi_lab.png",
         "description": "Website supporting STEM outreach and lab projects at UC San Diego."
       },
       {
         "title": "Low Price Center",
+        "year": "2026",
         "image": "/portfolio/images/price_center.png",
         "description": "Full-stack marketplace platform with user profiles, listings, and backend APIs."
       },
