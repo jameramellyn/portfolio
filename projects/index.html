@@ -7,6 +7,8 @@
 
   <script type="module" src="../global.js"></script>
   <script type="module" src="projects.js"></script>
+
+  <link rel="stylesheet" href="../style.css">
   <style>
     html {
       --color-accent: rgba(186, 206, 215, 1);
@@ -167,16 +169,22 @@
     <p>A collection of technical and creative work.</p>
   </header>
   
-  <svg id="projects-pie-plot" viewBox="-50 -50 100 100"></svg>
 
-  <section class="projects-section">  
-    <div class="projects-grid"></div>
-  </section>
+  <main class="projects-section">  
+    <div class="chart-container">
+      <svg id="projects-pie-plot" viewBox="-50 -50 100 100"></svg>
+      <ul class="legend"></ul>
+    </div>
+    <input
+    class="searchBar"
+    type="search"
+    aria-label="Search projects"
+    placeholder="🔍 Search projects…"
+    />
   
-  <main class="projects-section">
     <div class="projects-grid"></div>
   </main>
-
+  
 
 </body>
 </html>
