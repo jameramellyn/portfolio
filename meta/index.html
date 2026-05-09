@@ -1,159 +1,249 @@
-console.log("main.js is running");
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Meta</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Meta</title>
 
-    <script type="module" src="../global.js"></script>
-    <script type="module" src="./main.js"></script>
+  <script type="module" src="../global.js"></script>
+  <script type="module" src="./main.js"></script>
 
+  <link rel="stylesheet" href="../style.css">
 
-    <link rel="stylesheet" href="../style.css">
-    <style>
-      html {
-        --color-accent: rgba(186, 206, 215, 1);
-        accent-color: var(--color-accent);
-        scroll-behavior: smooth;
-        color-scheme: light dark;
-      }
-    
-      .color-scheme {
-        position: absolute;
-        top: 1rem;
-        right: 1rem;
-        font-size: 80%;
-        z-index: 1001;
-      }
-  
-      select {
-        font: inherit;
-        padding: 0.3rem 0.4rem;
-      }
-  
-      * {
-        box-sizing: border-box;
-      }
-    
-      body {
-        margin: 0;
-        font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-        line-height: 1.6;
-        background: Canvas;
-        color: CanvasText;
-      }
-    
-      nav {
-        --border-color: oklch(50% 10% 200 / 40%);
-        position: sticky;
-        top: 0;
-        z-index: 1000;
-        backdrop-filter: blur(8px);
-        border-bottom: 1px solid var(--border-color);
-        padding: 0.5rem 1rem;
-      }
-    
-      nav a {
-        display: inline-block;
-        text-decoration: none;
-        color: inherit;
-        padding: 0.55rem 1rem;
-        border-radius: 0.5rem;
-        transition: background-color 0.2s ease, color 0.2s ease;
-        font-size: 0.95rem;
-      }
-    
-      nav a:hover {
-        background-color: color-mix(in oklch, var(--color-accent), canvas 85%);
-      }
-    
-      nav a.current {
-        background-color: color-mix(in oklch, var(--color-accent), canvas 80%);
-        font-weight: 600;
-      }
-    
-      .page-header {
-        padding: 5rem 1.5rem 2rem;
-        text-align: center;
-      }
-    
-      .page-header h1 {
-        margin: 0;
-        font-size: clamp(2.5rem, 7vw, 4.3rem);
-        letter-spacing: -0.04em;
-        line-height: 1;
-      }
-    
-      .page-header p {
-        margin: 1rem auto 0;
-        max-width: 700px;
-        font-size: 1.05rem;
-        color: color-mix(in oklch, CanvasText, Canvas 35%);
-      }
-    
-    
-      article {
-        background: Canvas;
-        border: 1px solid color-mix(in oklch, CanvasText, Canvas 75%);
-        border-radius: 18px;
-        padding: 1rem;
-        transition: transform 0.2s ease, box-shadow 0.2s ease, background-color 0.2s ease;
-      }
-    
-      article:hover {
-        transform: translateY(-4px);
-        box-shadow: 0 12px 30px color-mix(in oklch, CanvasText, Canvas 90%);
-      }
-    
-      article img {
-        width: 100%;
-        height: 170px;
-        object-fit: cover;
-        object-position: center;
-        border-radius: 12px;
-        margin-bottom: 1rem;
-      }
-    
-      article h2 {
-        margin: 0 0 0.5rem;
-        font-size: 1.1rem;
-        line-height: 1.25;
-      }
-    
-      article p {
-        margin: 0.75rem 0 0;
-        font-size: 0.95rem;
-        color: color-mix(in oklch, CanvasText, Canvas 25%);
-      }
-    
-      article a {
-        text-decoration: none;
-        font-weight: 600;
-        color: inherit;
-      }
-    
-      article a:hover {
-        text-decoration: underline;
-      }
-    
-      @media (max-width: 900px) {
-        .projects-grid {
-          grid-template-columns: 1fr;
-        }
-      }
-    </style>
+  <style>
+    html {
+      --color-accent: rgba(186, 206, 215, 1);
+      accent-color: var(--color-accent);
+      scroll-behavior: smooth;
+      color-scheme: light dark;
+    }
 
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      font-family: Inter, ui-sans-serif, system-ui, -apple-system,
+        BlinkMacSystemFont, "Segoe UI", sans-serif;
+      line-height: 1.6;
+      background: Canvas;
+      color: CanvasText;
+    }
+
+    /* ---------------- HEADER ---------------- */
+
+    .page-header {
+      padding: 5rem 1.5rem 2rem;
+      text-align: center;
+    }
+
+    .page-header h1 {
+      margin: 0;
+      font-size: clamp(2.5rem, 7vw, 4.3rem);
+      letter-spacing: -0.04em;
+      line-height: 1;
+    }
+
+    .page-header p {
+      margin: 1rem auto 0;
+      max-width: 700px;
+      font-size: 1.05rem;
+      color: color-mix(in oklch, CanvasText, Canvas 35%);
+    }
+
+    /* ---------------- STATS ---------------- */
+
+    .stats {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+      gap: 1rem;
+      margin: 2rem auto;
+      max-width: 900px;
+      padding: 0 1rem;
+    }
+
+    .stats dt {
+      font-size: 0.85rem;
+      text-transform: uppercase;
+      opacity: 0.7;
+      margin-bottom: 0.4rem;
+    }
+
+    .stats dd {
+      margin: 0;
+      font-size: 2rem;
+      font-weight: 700;
+    }
+
+    .stats > div {
+      background: color-mix(in oklch, Canvas, var(--color-accent) 12%);
+      border: 1px solid color-mix(in oklch, CanvasText, Canvas 80%);
+      border-radius: 18px;
+      padding: 1.25rem;
+      box-shadow: 0 6px 18px color-mix(in oklch, CanvasText, Canvas 92%);
+      transition: transform 0.2s ease;
+    }
+
+    .stats > div:hover {
+      transform: translateY(-3px);
+    }
+
+    /* ---------------- CHART ---------------- */
+
+    h2 {
+      max-width: 1000px;
+      margin: 3rem auto 1rem;
+      padding: 0 1.5rem;
+    }
+
+    #chart {
+      max-width: 1000px;
+      margin: 1rem auto 3rem;
+      padding: 1.5rem;
+      border: 1px solid color-mix(in oklch, CanvasText, Canvas 80%);
+      border-radius: 18px;
+      background: Canvas;
+      box-shadow: 0 8px 24px color-mix(in oklch, CanvasText, Canvas 92%);
+    }
+
+    #chart svg {
+      width: 100%;
+      height: auto;
+      display: block;
+    }
+
+    /* ---------------- GRIDLINES ---------------- */
+
+    .gridlines line {
+      stroke: currentColor;
+      stroke-opacity: 0.12;
+      shape-rendering: crispEdges;
+    }
+
+    .gridlines path {
+      display: none;
+    }
+
+    /* ---------------- DOTS ---------------- */
+
+    circle {
+      transition: 200ms;
+      transform-origin: center;
+      transform-box: fill-box;
+      opacity: 0.85;
+    }
+
+    circle:hover {
+      transform: scale(1.5);
+      opacity: 1;
+    }
+
+    /* ---------------- TOOLTIP ---------------- */
+
+    dl.info {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 0.35rem 1rem;
+  margin: 0;
+  padding: 1rem 1.25rem;
+  border-radius: 14px;
+  background: color-mix(in oklch, Canvas, var(--color-accent) 10%);
+  border: 1px solid color-mix(in oklch, CanvasText, Canvas 80%);
+  box-shadow: 0 8px 24px color-mix(in oklch, CanvasText, Canvas 85%);
+  backdrop-filter: blur(10px);
+
+  transition-duration: 500ms;
+  transition-property: opacity, visibility;
+}
+
+    dl.info dt {
+    margin: 0;
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    opacity: 0.65;
+    }
+
+    dl.info dd {
+    margin: 0;
+    font-weight: 600;
+    }
+
+    #commit-tooltip[hidden] {
+    display: none;
+    }
+
+    .tooltip {
+    position: fixed;
+    z-index: 1000;
+    pointer-events: none;
+    }
+        /* ---------------- NAV ---------------- */
+
+    nav {
+      --border-color: oklch(50% 10% 200 / 40%);
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      backdrop-filter: blur(8px);
+      border-bottom: 1px solid var(--border-color);
+      padding: 0.5rem 1rem;
+    }
+
+    nav a {
+      display: inline-block;
+      text-decoration: none;
+      color: inherit;
+      padding: 0.55rem 1rem;
+      border-radius: 0.5rem;
+      transition: background-color 0.2s ease, color 0.2s ease;
+      font-size: 0.95rem;
+    }
+
+    nav a:hover {
+      background-color: color-mix(in oklch, var(--color-accent), canvas 85%);
+    }
+
+    nav a.current {
+      background-color: color-mix(in oklch, var(--color-accent), canvas 80%);
+      font-weight: 600;
+    }
+  </style>
 </head>
 
-    <body>
+<body>
 
-        <header class="page-header">
-            <h1>Meta</h1>
-            <p>page includes stats about this website.</p>
-        </header>
+  <header class="page-header">
+    <h1>Meta</h1>
+    <p>page includes stats about this website.</p>
+  </header>
 
-        <div id="stats"></div>
+  <div id="stats"></div>
 
-    </body>
+  <h2>Commits by time of day</h2>
+
+  <div id="chart"></div>
+
+  <!-- TOOLTIP -->
+
+  <dl id="commit-tooltip" class="info tooltip" hidden>
+    <dt>Commit</dt>
+    <dd>
+      <a href="" id="commit-link" target="_blank"></a>
+    </dd>
+
+    <dt>Date</dt>
+    <dd id="commit-date"></dd>
+
+    <dt>Time</dt>
+    <dd id="commit-time"></dd>
+
+    <dt>Author</dt>
+    <dd id="commit-author"></dd>
+
+    <dt>Lines Edited</dt>
+    <dd id="commit-lines"></dd>
+  </dl>
+
+</body>
 </html>

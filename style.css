@@ -67,3 +67,24 @@ body {
 .selected:is(path) {
   fill: var(--color);
 }
+
+.gridlines line {
+  stroke: currentColor;
+  stroke-opacity: 0.12;
+  shape-rendering: crispEdges;
+}
+
+.gridlines path {
+  display: none;
+}
+
+.dots circle {
+  opacity: 0.85;
+  transition: opacity 0.2s ease, r 0.2s ease;
+}
+
+.dots circle {
+  opacity: 0.85;
+  transition: opacity 0.2s ease, transform 0.2s ease;
+  transform-origin: center;
+}
