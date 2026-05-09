@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Meta</title>
+
+    <script type="module" src="../global.js"></script>
+    <script type="module" src="projects.js"></script>
+  
+    <link rel="stylesheet" href="../style.css">
+    <style>
+      html {
+        --color-accent: rgba(186, 206, 215, 1);
+        accent-color: var(--color-accent);
+        scroll-behavior: smooth;
+        color-scheme: light dark;
+      }
+    
+      .color-scheme {
+        position: absolute;
+        top: 1rem;
+        right: 1rem;
+        font-size: 80%;
+        z-index: 1001;
+      }
+  
+      select {
+        font: inherit;
+        padding: 0.3rem 0.4rem;
+      }
+  
+      * {
+        box-sizing: border-box;
+      }
+    
+      body {
+        margin: 0;
+        font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+        line-height: 1.6;
+        background: Canvas;
+        color: CanvasText;
+      }
+    
+      nav {
+        --border-color: oklch(50% 10% 200 / 40%);
+        position: sticky;
+        top: 0;
+        z-index: 1000;
+        backdrop-filter: blur(8px);
+        border-bottom: 1px solid var(--border-color);
+        padding: 0.5rem 1rem;
+      }
+    
+      nav a {
+        display: inline-block;
+        text-decoration: none;
+        color: inherit;
+        padding: 0.55rem 1rem;
+        border-radius: 0.5rem;
+        transition: background-color 0.2s ease, color 0.2s ease;
+        font-size: 0.95rem;
+      }
+    
+      nav a:hover {
+        background-color: color-mix(in oklch, var(--color-accent), canvas 85%);
+      }
+    
+      nav a.current {
+        background-color: color-mix(in oklch, var(--color-accent), canvas 80%);
+        font-weight: 600;
+      }
+    
+      .page-header {
+        padding: 5rem 1.5rem 2rem;
+        text-align: center;
+      }
+    
+      .page-header h1 {
+        margin: 0;
+        font-size: clamp(2.5rem, 7vw, 4.3rem);
+        letter-spacing: -0.04em;
+        line-height: 1;
+      }
+    
+      .page-header p {
+        margin: 1rem auto 0;
+        max-width: 700px;
+        font-size: 1.05rem;
+        color: color-mix(in oklch, CanvasText, Canvas 35%);
+      }
+    
+    
+      article {
+        background: Canvas;
+        border: 1px solid color-mix(in oklch, CanvasText, Canvas 75%);
+        border-radius: 18px;
+        padding: 1rem;
+        transition: transform 0.2s ease, box-shadow 0.2s ease, background-color 0.2s ease;
+      }
+    
+      article:hover {
+        transform: translateY(-4px);
+        box-shadow: 0 12px 30px color-mix(in oklch, CanvasText, Canvas 90%);
+      }
+    
+      article img {
+        width: 100%;
+        height: 170px;
+        object-fit: cover;
+        object-position: center;
+        border-radius: 12px;
+        margin-bottom: 1rem;
+      }
+    
+      article h2 {
+        margin: 0 0 0.5rem;
+        font-size: 1.1rem;
+        line-height: 1.25;
+      }
+    
+      article p {
+        margin: 0.75rem 0 0;
+        font-size: 0.95rem;
+        color: color-mix(in oklch, CanvasText, Canvas 25%);
+      }
+    
+      article a {
+        text-decoration: none;
+        font-weight: 600;
+        color: inherit;
+      }
+    
+      article a:hover {
+        text-decoration: underline;
+      }
+    
+      @media (max-width: 900px) {
+        .projects-grid {
+          grid-template-columns: 1fr;
+        }
+      }
+    </style>
+
+</head>
+
+    <body>
+
+        <header class="page-header">
+            <h1>Meta</h1>
+            <p>page includes stats about this website.</p>
+        </header>
+    
+    </body>
+</html>
