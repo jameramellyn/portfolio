@@ -18,6 +18,12 @@
         "description": "Full-stack marketplace platform with user profiles, listings, and backend APIs."
       },
     {
+        "title": "Bikewatching Visualization",
+        "year": "2026",
+        "image": "/portfolio/images/bikewatching.png",
+        "description": "Data visualization of biker movement in Boston Area, using D3.js."
+    },
+    {
         "title": "Distributed Motor Control System",
         "year": "2026",
         "image": "../images/distributed_motors.png",
