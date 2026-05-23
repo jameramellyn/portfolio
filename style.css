@@ -107,3 +107,40 @@ circle.selected {
   animation: marching-ants 2s linear infinite;
 }
 
+#scrolly-1 {
+  position: relative;
+  display: flex;
+  gap: 1rem;
+}
+
+#scrolly-1 > * {
+  flex: 1;
+}
+
+#scatter-story {
+  position: relative;
+}
+
+#scatter-story .step {
+  padding-bottom: 80vh;
+  line-height: 1.6;
+}
+
+#scatter-plot {
+  position: sticky;
+  top: 0;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.tooltip {
+  position: fixed;
+  background: Canvas;
+  border: 1px solid color-mix(in oklch, CanvasText, Canvas 75%);
+  border-radius: 8px;
+  padding: 0.75rem 1rem;
+  pointer-events: none;
+  z-index: 999;
+}
