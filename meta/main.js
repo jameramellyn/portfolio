@@ -93,6 +93,8 @@ let xScale, yScale;
 let commits = [];
 let filteredCommits = [];
 
+const colors = d3.scaleOrdinal(d3.schemeTableau10);
+
 function renderScatterPlot(data, commitsToRender) {
   const width = 1000;
   const height = 600;
@@ -142,7 +144,6 @@ function renderScatterPlot(data, commitsToRender) {
       .on("start brush end", brushed)
   );
 
-  // Raise dots AND overlay so dots are clickable above brush
   svg.selectAll(".dots, .overlay ~ *").raise();
   svg.select(".dots").raise();
 
@@ -231,6 +232,39 @@ function brushed(event) {
   renderLanguageBreakdown(selection);
 }
 
+function updateFileDisplay(filteredCommits) {
+  let lines = filteredCommits.flatMap((d) => d.lines);
+  let files = d3
+    .groups(lines, (d) => d.file)
+    .map(([name, lines]) => ({ name, lines }))
+    .sort((a, b) => b.lines.length - a.lines.length);
+
+  let filesContainer = d3
+    .select("#files")
+    .selectAll("div")
+    .data(files, (d) => d.name)
+    .join((enter) =>
+      enter.append("div").call((div) => {
+        div.append("dt").call((dt) => {
+          dt.append("code");
+          dt.append("small");
+        });
+        div.append("dd");
+      })
+    );
+
+  filesContainer.select("dt > code").text((d) => d.name);
+  filesContainer.select("dt > small").text((d) => `${d.lines.length} lines`);
+
+  filesContainer
+    .select("dd")
+    .selectAll("div")
+    .data((d) => d.lines)
+    .join("div")
+    .attr("class", "loc")
+    .attr("style", (d) => `--color: ${colors(d.type)}`);
+}
+
 function setupTimeSlider() {
   const slider = document.getElementById("commit-progress");
   const timeDisplay = document.getElementById("commit-progress-time");
@@ -248,6 +282,7 @@ function setupTimeSlider() {
     filteredCommits = commits.filter((d) => d.datetime <= commitMaxTime);
     updateScatterPlot(data, filteredCommits);
     renderCommitInfo(filteredCommits.flatMap((d) => d.lines), filteredCommits);
+    updateFileDisplay(filteredCommits);
   }
 
   slider.addEventListener("input", onTimeSliderChange);
@@ -276,6 +311,7 @@ function setupScrollytelling() {
     filteredCommits = commits.filter((d) => d.datetime <= commitMaxTime);
     updateScatterPlot(data, filteredCommits);
     renderCommitInfo(filteredCommits.flatMap((d) => d.lines), filteredCommits);
+    updateFileDisplay(filteredCommits);
   }
 
   const scroller = scrollama();
@@ -288,7 +324,10 @@ let data = await loadData();
 commits = processCommits(data);
 filteredCommits = commits;
 
+console.log("commits:", commits);
+
 renderCommitInfo(data, commits);
 renderScatterPlot(data, commits);
+updateFileDisplay(commits);
 setupTimeSlider();
 setupScrollytelling();

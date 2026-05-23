@@ -110,7 +110,8 @@ circle.selected {
 #scrolly-1 {
   position: relative;
   display: flex;
-  gap: 1rem;
+  gap: 2rem;
+  align-items: flex-start;
 }
 
 #scrolly-1 > * {
@@ -119,28 +120,27 @@ circle.selected {
 
 #scatter-story {
   position: relative;
+  flex: 1;
 }
 
 #scatter-story .step {
-  padding-bottom: 80vh;
+  padding-top: 2rem;
+  padding-bottom: 60vh;
   line-height: 1.6;
+  max-width: 40ch;
 }
 
 #scatter-plot {
   position: sticky;
-  top: 0;
-  height: 100vh;
+  top: 10vh;
+  height: 80vh;
+  flex: 1.5;
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: flex-start;
 }
 
-.tooltip {
-  position: fixed;
-  background: Canvas;
-  border: 1px solid color-mix(in oklch, CanvasText, Canvas 75%);
-  border-radius: 8px;
-  padding: 0.75rem 1rem;
-  pointer-events: none;
-  z-index: 999;
+#chart svg {
+  width: 100%;
+  height: auto;
 }
