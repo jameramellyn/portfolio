@@ -4,7 +4,50 @@ html {
 
 body {
   font: 100%/1.5 system-ui;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 1rem 2rem;
 }
+
+/* ==========================
+  NAV
+  ========================== */
+
+nav {
+  display: flex;
+  gap: 0.5rem;
+  padding: 0.75rem 1rem;
+  border-bottom: 1px solid color-mix(in oklch, CanvasText, Canvas 75%);
+}
+
+nav a {
+  text-decoration: none;
+  color: inherit;
+  padding: 0.4rem 0.75rem;
+  border-radius: 0.5rem;
+  transition: background-color 0.2s ease;
+}
+
+nav a:hover {
+  background-color: color-mix(in oklch, CanvasText, Canvas 85%);
+}
+
+nav a.current {
+  font-weight: 600;
+  background-color: color-mix(in oklch, CanvasText, Canvas 80%);
+}
+
+.color-scheme {
+  position: fixed;
+  top: 0.75rem;
+  right: 1rem;
+  font-size: 0.85rem;
+  z-index: 1001;
+}
+
+/* ==========================
+  PROJECTS
+  ========================== */
 
 .project-year {
   color: gray;
@@ -60,6 +103,10 @@ body {
   display: inline-block;
 }
 
+/* ==========================
+  SCATTER PLOT
+  ========================== */
+
 .selected {
   --color: oklch(60% 45% 0) !important;
 }
@@ -80,12 +127,7 @@ body {
 
 .dots circle {
   opacity: 0.85;
-  transition: opacity 0.2s ease, r 0.2s ease;
-}
-
-.dots circle {
-  opacity: 0.85;
-  transition: opacity 0.2s ease, transform 0.2s ease;
+  transition: opacity 0.2s ease, r 0.2s ease, transform 0.2s ease;
   transform-origin: center;
 }
 
@@ -107,6 +149,10 @@ circle.selected {
   animation: marching-ants 2s linear infinite;
 }
 
+/* ==========================
+  SCROLLYTELLING
+  ========================== */
+
 #scrolly-1 {
   position: relative;
   display: flex;
@@ -125,7 +171,7 @@ circle.selected {
 
 #scatter-story .step {
   padding-top: 4rem;
-  padding-bottom: 80vh;   /* was 60vh — needs to be tall enough that each step fully clears the viewport */
+  padding-bottom: 80vh;
   line-height: 1.6;
   max-width: 40ch;
 }
@@ -145,9 +191,10 @@ circle.selected {
   height: auto;
 }
 
-/* Add to style.css */
+/* ==========================
+  FILE UNIT VISUALIZATION
+  ========================== */
 
-/* Unit visualization dots */
 .loc {
   display: flex;
   width: 0.5em;
@@ -156,7 +203,6 @@ circle.selected {
   border-radius: 50%;
 }
 
-/* File list layout */
 #files {
   display: grid;
   grid-template-columns: 1fr 4fr;
@@ -184,25 +230,4 @@ circle.selected {
   gap: 0.15em;
   padding-top: 0.6em;
   margin-left: 0;
-}
-
-/* Fix overall page padding */
-body {
-  font: 100%/1.5 system-ui;
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 1rem 2rem;
-}
-
-/* Fix nav links running together */
-nav ul {
-  display: flex;
-  gap: 0.5rem;
-  list-style: none;
-  margin: 0;
-  padding: 0;
-}
-
-nav a {
-  padding: 0.4rem 0.75rem;
 }
