@@ -1,15 +1,16 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
   <title>Jamera Fernando Portfolio</title>
 
   <script type="module" src="./global.js"></script>
   <script src="index.js" type="module" defer></script>
 
+  <link rel="stylesheet" href="style.css" />
 
-  
   <style>
     html {
       --color-accent: rgba(186, 206, 215, 1);
@@ -18,8 +19,21 @@
       color-scheme: light dark;
     }
 
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      font-family: Inter, ui-sans-serif, system-ui, -apple-system,
+        BlinkMacSystemFont, "Segoe UI", sans-serif;
+      line-height: 1.6;
+      background: Canvas;
+      color: CanvasText;
+    }
+
     .color-scheme {
-      position: absolute;
+      position: fixed;
       top: 1rem;
       right: 1rem;
       font-size: 80%;
@@ -30,52 +44,15 @@
       font: inherit;
       padding: 0.3rem 0.4rem;
     }
-  
-    * {
-      box-sizing: border-box;
-    }
-  
-    body {
-      margin: 0;
-      font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-      line-height: 1.6;
-      background: Canvas;
-      color: CanvasText;
-    }
-  
-    nav {
-      --border-color: oklch(50% 10% 200 / 40%);
-      position: sticky;
-      top: 0;
-      z-index: 1000;
-      backdrop-filter: blur(8px);
-      border-bottom: 1px solid var(--border-color);
-      padding: 0.5rem 1rem;
-    }
-  
-    nav a {
-      display: inline-block;
-      text-decoration: none;
-      color: inherit;
-      padding: 0.55rem 1rem;
-      border-radius: 0.5rem;
-      transition: background-color 0.2s ease, color 0.2s ease;
-      font-size: 0.95rem;
-    }
-  
-    nav a:hover {
-      background-color: color-mix(in oklch, var(--color-accent), canvas 85%);
-    }
-  
-    nav a.current {
-      background-color: color-mix(in oklch, var(--color-accent), canvas 80%);
-      font-weight: 600;
-    }
-  
+
     section {
       padding: 4rem 1.5rem;
     }
-  
+
+    /* ==========================
+      HERO
+      ========================== */
+
     .hero {
       min-height: 100vh;
       display: flex;
@@ -87,7 +64,7 @@
       background: url("images/IMG_1749.JPG") center / cover no-repeat;
       overflow: hidden;
     }
-  
+
     .hero::before {
       content: "";
       position: absolute;
@@ -95,7 +72,7 @@
       background: rgba(0, 0, 0, 0.35);
       z-index: 0;
     }
-  
+
     .hero-content {
       position: relative;
       z-index: 1;
@@ -104,7 +81,7 @@
       max-width: 800px;
       padding: 0 1rem;
     }
-  
+
     .hero-content h1 {
       font-size: clamp(2.8rem, 7vw, 5.5rem);
       margin: 0;
@@ -112,7 +89,7 @@
       line-height: 1;
       text-shadow: 0 4px 18px rgba(0, 0, 0, 0.25);
     }
-  
+
     .hero-content p {
       margin-top: 1rem;
       font-size: 1.15rem;
@@ -120,7 +97,7 @@
       letter-spacing: 0.01em;
       text-shadow: 0 2px 10px rgba(0, 0, 0, 0.25);
     }
-  
+
     .scroll-arrow {
       position: absolute;
       bottom: 2rem;
@@ -132,7 +109,7 @@
       opacity: 0.85;
       transition: transform 0.2s ease, opacity 0.2s ease;
     }
-  
+
     .scroll-arrow::before {
       content: "";
       display: block;
@@ -143,17 +120,21 @@
       border-bottom: 2px solid white;
       transform: rotate(45deg);
     }
-  
+
     .scroll-arrow:hover {
       transform: translateX(-50%) translateY(4px);
       opacity: 1;
     }
-  
+
+    /* ==========================
+      ABOUT
+      ========================== */
+
     .about {
       background: Canvas;
       border-top: 1px solid color-mix(in oklch, CanvasText, Canvas 75%);
     }
-  
+
     .about-container {
       max-width: 1000px;
       margin: 0 auto;
@@ -162,7 +143,7 @@
       gap: 3rem;
       align-items: center;
     }
-  
+
     .about img {
       width: 100%;
       max-width: 350px;
@@ -171,48 +152,22 @@
       margin: 0 auto;
       box-shadow: 0 10px 30px color-mix(in oklch, CanvasText, Canvas 90%);
     }
-  
+
     .about-text h2 {
       margin-top: 0;
       font-size: 2rem;
     }
-  
+
     .about-text p {
       font-size: 1rem;
       color: color-mix(in oklch, CanvasText, Canvas 25%);
       margin-bottom: 1rem;
     }
-  
-    .fade-section {
-      opacity: 0;
-      transform: translateY(32px);
-      transition: opacity 0.8s ease, transform 0.8s ease;
-      will-change: opacity, transform;
-    }
-  
-    .fade-section.visible {
-      opacity: 1;
-      transform: translateY(0);
-    }
-  
-    @media (max-width: 768px) {
-      .about-container {
-        grid-template-columns: 1fr;
-        text-align: center;
-      }
-  
-      .hero-content h1 {
-        font-size: clamp(2.4rem, 11vw, 4rem);
-      }
-  
-      .hero-content p {
-        font-size: 1rem;
-      }
-  
-      .about-text h2 {
-        font-size: 1.7rem;
-      }
-    }
+
+    /* ==========================
+      PROJECTS
+      ========================== */
+
     .projects {
       display: grid;
       grid-template-columns: repeat(3, minmax(0, 1fr));
@@ -221,8 +176,8 @@
 
     .projects article img {
       width: 100%;
-      height: 150px;      
-      object-fit: cover;   
+      height: 150px;
+      object-fit: cover;
       border-radius: 12px;
     }
 
@@ -233,7 +188,7 @@
     }
 
     /* ==========================
-      GITHUB STATS STYLING
+      GITHUB STATS
       ========================== */
 
     #profile-stats {
@@ -265,19 +220,58 @@
       font-size: 1.5rem;
       font-weight: 600;
     }
+
+    /* ==========================
+      FADE ANIMATION
+      ========================== */
+
+    .fade-section {
+      opacity: 0;
+      transform: translateY(32px);
+      transition: opacity 0.8s ease, transform 0.8s ease;
+      will-change: opacity, transform;
+    }
+
+    .fade-section.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* ==========================
+      RESPONSIVE
+      ========================== */
+
+    @media (max-width: 768px) {
+      .about-container {
+        grid-template-columns: 1fr;
+        text-align: center;
+      }
+
+      .projects {
+        grid-template-columns: 1fr;
+      }
+
+      .hero-content h1 {
+        font-size: clamp(2.4rem, 11vw, 4rem);
+      }
+
+      .hero-content p {
+        font-size: 1rem;
+      }
+
+      .about-text h2 {
+        font-size: 1.7rem;
+      }
+
+      #profile-stats dl {
+        grid-template-columns: repeat(2, 1fr);
+        row-gap: 1rem;
+      }
+    }
   </style>
 </head>
 
 <body>
-  <!-- <ul>
-    <li><a href="#home" class="nav-link ">Home</a></li>
-    <li><a href="#about" class="nav-link">About</a></li>
-    <li><a href="projects/">Projects</a></li>
-    <li><a href="resume/">Resume</a></li>
-    <li><a href="contact/">Contact</a></li>
-    <li><a href="https://github.com/jameramellyn" target="_blank">Github</a></li>
-  </ul> -->
-
   <section id="home" class="hero fade-section">
     <div class="hero-content">
       <h1>Jamera Mellyn Fernando</h1>
@@ -289,36 +283,49 @@
 
   <section class="latest-projects fade-section">
     <h2>Latest Projects</h2>
+
     <div class="projects">
-      <!-- Dynamically added projects go here -->
+      <!-- JS inserts projects here -->
     </div>
   </section>
-  
+
   <section class="github-stats fade-section">
     <h2>GitHub Stats</h2>
+
     <div id="profile-stats">
-      <!-- Dynamically added GitHub stats go here -->
+      <!-- JS inserts GitHub stats here -->
     </div>
   </section>
 
   <section id="about" class="about fade-section">
     <div class="about-container">
       <div class="about-image">
-        <img src="images/IMG_3973.JPG" alt="Portrait of Jamera Fernando">
+        <img
+          src="images/IMG_3973.JPG"
+          alt="Portrait of Jamera Fernando"
+        />
       </div>
 
       <div class="about-text">
         <h2>About Me</h2>
+
         <p>
-          Hi, I’m Jamera. I’m a student at UC San Diego studying Data Science, with interests in machine learning,
-          neuroscience, and building meaningful technology that connects analysis with real-world impact.
+          Hi, I’m Jamera. I’m a student at UC San Diego studying Data
+          Science, with interests in machine learning, neuroscience, and
+          building meaningful technology that connects analysis with
+          real-world impact.
         </p>
+
         <p>
-          I enjoy working across both technical and creative spaces, whether that means developing data-driven projects,
-          exploring research, or designing experiences that feel thoughtful and personal.
+          I enjoy working across both technical and creative spaces,
+          whether that means developing data-driven projects, exploring
+          research, or designing experiences that feel thoughtful and
+          personal.
         </p>
+
         <p>
-          Outside of academics, I also love art and design, which continues to shape how I think about problem-solving,
+          Outside of academics, I also love art and design, which
+          continues to shape how I think about problem-solving,
           storytelling, and the way I present my work.
         </p>
       </div>
@@ -326,45 +333,24 @@
   </section>
 
   <script>
-    const fadeSections = document.querySelectorAll('.fade-section');
+    const fadeSections = document.querySelectorAll(".fade-section");
 
-    const fadeObserver = new IntersectionObserver((entries) => {
-      entries.forEach((entry) => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add('visible');
-        }
-      });
-    }, {
-      threshold: 0.15
-    });
+    const fadeObserver = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add("visible");
+          }
+        });
+      },
+      {
+        threshold: 0.15,
+      }
+    );
 
     fadeSections.forEach((section) => {
       fadeObserver.observe(section);
     });
-
-    // const sections = document.querySelectorAll('section[id]');
-    // const navLinks = document.querySelectorAll('.nav-link');
-
-    // const navObserver = new IntersectionObserver((entries) => {
-    //   entries.forEach((entry) => {
-    //     if (entry.isIntersecting) {
-    //       const activeId = entry.target.getAttribute('id');
-
-    //       navLinks.forEach((link) => {
-    //         link.classList.remove('current');
-    //         if (link.getAttribute('href') === `#${activeId}`) {
-    //           link.classList.add('current');
-    //         }
-    //       });
-    //     }
-    //   });
-    // }, {
-    //   threshold: 0.55
-    // });
-
-    // sections.forEach((section) => {
-    //   navObserver.observe(section);
-    // });
   </script>
 </body>
 </html>

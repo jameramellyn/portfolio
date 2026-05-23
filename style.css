@@ -2,6 +2,10 @@ html {
   color-scheme: light dark;
 }
 
+/* ==========================
+  GLOBAL
+  ========================== */
+
 body {
   font: 100%/1.5 system-ui;
   max-width: 1200px;
@@ -10,32 +14,50 @@ body {
 }
 
 /* ==========================
-  NAV
+  NAVBAR
   ========================== */
 
 nav {
   display: flex;
-  gap: 0.5rem;
-  padding: 0.75rem 1rem;
-  border-bottom: 1px solid color-mix(in oklch, CanvasText, Canvas 75%);
+  justify-content: center;
+  align-items: center;
+  gap: 0;
+  margin-bottom: 2rem;
+  border-bottom: 1px solid
+    color-mix(in oklch, CanvasText, Canvas 80%);
+  background: Canvas;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
 }
 
 nav a {
+  flex: 1;
+  text-align: center;
   text-decoration: none;
   color: inherit;
-  padding: 0.4rem 0.75rem;
-  border-radius: 0.5rem;
-  transition: background-color 0.2s ease;
+  padding: 0.85rem 1rem;
+  border-bottom: 0.35em solid transparent;
+  transition:
+    background-color 0.2s ease,
+    border-color 0.2s ease;
 }
 
 nav a:hover {
-  background-color: color-mix(in oklch, CanvasText, Canvas 85%);
+  border-bottom-color:
+    color-mix(in oklch, CanvasText, Canvas 35%);
+  background:
+    color-mix(in oklch, CanvasText, Canvas 92%);
 }
 
 nav a.current {
-  font-weight: 600;
-  background-color: color-mix(in oklch, CanvasText, Canvas 80%);
+  border-bottom-color: var(--color-accent, CanvasText);
+  font-weight: 700;
 }
+
+/* ==========================
+  THEME SWITCHER
+  ========================== */
 
 .color-scheme {
   position: fixed;
@@ -73,19 +95,22 @@ nav a.current {
   cursor: pointer;
 }
 
-#projects-pie-plot:has(path:hover) path:not(:hover) {
+#projects-pie-plot:has(path:hover)
+  path:not(:hover) {
   opacity: 0.5;
 }
 
 .legend {
   flex: 1;
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(9em, 1fr));
+  grid-template-columns:
+    repeat(auto-fill, minmax(9em, 1fr));
   gap: 1.75rem;
   list-style: none;
   margin: 0;
   padding: 1rem;
-  border: 1px solid color-mix(in oklch, CanvasText, Canvas 75%);
+  border: 1px solid
+    color-mix(in oklch, CanvasText, Canvas 75%);
   border-radius: 12px;
 }
 
@@ -104,7 +129,7 @@ nav a.current {
 }
 
 /* ==========================
-  SCATTER PLOT
+  SELECTED STATES
   ========================== */
 
 .selected {
@@ -114,6 +139,10 @@ nav a.current {
 .selected:is(path) {
   fill: var(--color);
 }
+
+/* ==========================
+  SCATTERPLOT
+  ========================== */
 
 .gridlines line {
   stroke: currentColor;
@@ -127,7 +156,10 @@ nav a.current {
 
 .dots circle {
   opacity: 0.85;
-  transition: opacity 0.2s ease, r 0.2s ease, transform 0.2s ease;
+  transition:
+    opacity 0.2s ease,
+    r 0.2s ease,
+    transform 0.2s ease;
   transform-origin: center;
 }
 
@@ -150,49 +182,40 @@ circle.selected {
 }
 
 /* ==========================
-  SCROLLYTELLING
+  META PAGE
   ========================== */
 
-#scrolly-1 {
-  position: relative;
-  display: flex;
-  gap: 2rem;
-  align-items: flex-start;
-}
-
-#scrolly-1 > * {
-  flex: 1;
-}
-
-#scatter-story {
-  position: relative;
-  flex: 1;
-}
-
-#scatter-story .step {
-  padding-top: 4rem;
-  padding-bottom: 80vh;
-  line-height: 1.6;
-  max-width: 40ch;
-}
-
-#scatter-plot {
-  position: sticky;
-  top: 10vh;
-  height: 80vh;
-  flex: 1.5;
+#commit-list {
   display: flex;
   flex-direction: column;
-  justify-content: flex-start;
+  gap: 1rem;
+  padding: 0;
+  margin: 2rem 0;
+  list-style: none;
 }
 
-#chart svg {
-  width: 100%;
-  height: auto;
+#commit-list li,
+.commit {
+  padding: 1rem;
+  border: 1px solid
+    color-mix(in oklch, CanvasText, Canvas 80%);
+  border-radius: 12px;
+  background: Canvas;
+}
+
+#commit-list h2,
+.commit h2 {
+  margin: 0 0 0.35rem;
+  font-size: 1rem;
+}
+
+#commit-list p,
+.commit p {
+  margin: 0.25rem 0;
 }
 
 /* ==========================
-  FILE UNIT VISUALIZATION
+  FILE VISUALIZATION
   ========================== */
 
 .loc {
@@ -230,4 +253,27 @@ circle.selected {
   gap: 0.15em;
   padding-top: 0.6em;
   margin-left: 0;
+}
+
+/* ==========================
+  RESPONSIVE
+  ========================== */
+
+@media (max-width: 768px) {
+  body {
+    padding: 1rem;
+  }
+
+  nav {
+    flex-wrap: wrap;
+  }
+
+  nav a {
+    flex: unset;
+    width: 50%;
+  }
+
+  .chart-container {
+    flex-direction: column;
+  }
 }
