@@ -14,6 +14,7 @@ const pages = [
 ];
 
 const nav = document.createElement('nav');
+nav.className = 'site-nav';
 document.body.prepend(nav);
 
 const BASE_PATH =
@@ -138,4 +139,3 @@ export function renderProjects(projects, containerElement, headingLevel = 'h2') 
     return fetchJSON(`https://api.github.com/users/${username}`);
     // return statement here
   }
-

@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Contact | Jamera Fernando</title>
 
+  <link rel="stylesheet" href="../style.css">
   <script type="module" src="../global.js"></script>
   <style>
     html {
@@ -14,19 +15,6 @@
       color-scheme: light dark;
     }
 
-    .color-scheme {
-      position: absolute;
-      top: 1rem;
-      right: 1rem;
-      font-size: 80%;
-      z-index: 1001;
-    }
-
-    select {
-      font: inherit;
-      padding: 0.3rem 0.4rem;
-    }
-  
     * {
       box-sizing: border-box;
     }
@@ -37,35 +25,6 @@
       line-height: 1.6;
       background: Canvas;
       color: CanvasText;
-    }
-  
-    nav {
-      --border-color: oklch(50% 10% 200 / 40%);
-      position: sticky;
-      top: 0;
-      z-index: 1000;
-      backdrop-filter: blur(8px);
-      border-bottom: 1px solid var(--border-color);
-      padding: 0.5rem 1rem;
-    }
-  
-    nav a {
-      display: inline-block;
-      text-decoration: none;
-      color: inherit;
-      padding: 0.55rem 1rem;
-      border-radius: 0.5rem;
-      transition: background-color 0.2s ease;
-      font-size: 0.95rem;
-    }
-  
-    nav a:hover {
-      background-color: color-mix(in oklch, var(--color-accent), canvas 85%);
-    }
-  
-    nav a.current {
-      background-color: color-mix(in oklch, var(--color-accent), canvas 80%);
-      font-weight: 600;
     }
   
     .page-header {
