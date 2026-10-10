@@ -63,6 +63,7 @@ body.home-page {
   justify-content: center;
   align-items: center;
   width: min(100%, 62rem);
+  box-sizing: border-box;
   margin: 0 auto 2rem;
   border: 1px solid rgb(255 255 255 / 22%);
   border-radius: 999px;
@@ -86,15 +87,6 @@ body.home-page {
 .site-nav a.current {
   border: 0;
   background: rgb(255 255 255 / 16%);
-}
-
-.home-page .site-nav {
-  position: absolute;
-  top: 1rem;
-  left: 50%;
-  width: min(calc(100% - 2rem), 62rem);
-  margin: 0;
-  transform: translateX(-50%);
 }
 
 .home-page .hero {
@@ -121,12 +113,14 @@ body.home-page {
   z-index: 0;
   background: url("images/homepage-koi.jpg") center 88% / cover no-repeat;
   filter: contrast(1.14) saturate(1.38) sepia(0.16) hue-rotate(-7deg)
-    brightness(0.84);
+    brightness(0.74);
 }
 
 .home-page .hero::after {
   z-index: 0;
-  background: linear-gradient(rgb(0 0 0 / 28%), rgb(0 0 0 / 38%));
+  background:
+    linear-gradient(rgb(0 0 0 / 38%), rgb(0 0 0 / 48%)),
+    radial-gradient(ellipse at center, transparent 40%, rgb(0 0 0 / 34%) 100%);
 }
 
 .home-page .hero-content {
