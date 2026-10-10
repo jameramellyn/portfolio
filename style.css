@@ -102,8 +102,8 @@ body.home-page {
   position: relative;
   display: grid;
   box-sizing: border-box;
-  min-height: 78vh;
-  min-height: 78svh;
+  min-height: 90vh;
+  min-height: 90svh;
   place-items: center;
   overflow: hidden;
   padding: 4rem 1.5rem 4rem;
@@ -138,7 +138,7 @@ body.home-page {
   z-index: 1;
   width: min(100%, 70rem);
   padding: 2rem 1rem;
-  transform: translateY(-2vh);
+  transform: translateY(0);
 }
 
 .home-page .hero h1 {
@@ -530,8 +530,8 @@ circle.selected {
   }
 
   .home-page .hero {
-    min-height: 86vh;
-    min-height: 86svh;
+    min-height: 94vh;
+    min-height: 94svh;
     padding: 4rem 1rem 4rem;
   }
 
