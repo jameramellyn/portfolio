@@ -28,9 +28,11 @@ body.home-page {
   color: CanvasText;
 }
 
-.home-page .color-scheme {
+.color-scheme {
+  position: fixed;
   top: 4.5rem;
   right: 1.25rem;
+  z-index: 1001;
   display: flex;
   align-items: center;
   gap: 0.45rem;
@@ -40,9 +42,10 @@ body.home-page {
   color: white;
   background: rgb(0 0 0 / 35%);
   backdrop-filter: blur(12px);
+  font-size: 0.85rem;
 }
 
-.home-page .color-scheme select {
+.color-scheme select {
   max-width: 7.5rem;
   padding: 0.2rem 0.35rem;
   border: 0;
@@ -52,34 +55,46 @@ body.home-page {
   font: inherit;
 }
 
-.home-page nav {
-  position: absolute;
+.site-nav {
+  position: sticky;
   top: 1rem;
-  left: 50%;
   z-index: 1000;
   display: flex;
-  width: min(calc(100% - 2rem), 62rem);
-  margin: 0;
-  transform: translateX(-50%);
+  justify-content: center;
+  align-items: center;
+  width: min(100%, 62rem);
+  margin: 0 auto 2rem;
   border: 1px solid rgb(255 255 255 / 22%);
   border-radius: 999px;
   background: rgb(0 0 0 / 35%);
   backdrop-filter: blur(16px);
 }
 
-.home-page nav a {
+.site-nav a {
   flex: 1;
   min-width: max-content;
   padding: 0.65rem 0.9rem;
   border: 0;
   border-radius: 999px;
   color: white;
+  text-align: center;
+  text-decoration: none;
+  transition: background-color 0.2s ease;
 }
 
-.home-page nav a:hover,
-.home-page nav a.current {
+.site-nav a:hover,
+.site-nav a.current {
   border: 0;
   background: rgb(255 255 255 / 16%);
+}
+
+.home-page .site-nav {
+  position: absolute;
+  top: 1rem;
+  left: 50%;
+  width: min(calc(100% - 2rem), 62rem);
+  margin: 0;
+  transform: translateX(-50%);
 }
 
 .home-page .hero {
@@ -253,55 +268,6 @@ body.home-page {
   margin: 0.25rem 0 0;
   font-size: 1.5rem;
   font-weight: 650;
-}
-
-/* ==========================
-  NAVBAR
-  ========================== */
-
-nav {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 0;
-  margin-bottom: 2rem;
-  border-bottom: 1px solid color-mix(in oklch, CanvasText, Canvas 80%);
-  background: Canvas;
-  position: sticky;
-  top: 0;
-  z-index: 1000;
-}
-
-nav a {
-  flex: 1;
-  text-align: center;
-  text-decoration: none;
-  color: inherit;
-  padding: 0.85rem 1rem;
-  border-bottom: 0.35em solid transparent;
-  transition: background-color 0.2s ease, border-color 0.2s ease;
-}
-
-nav a:hover {
-  border-bottom-color: color-mix(in oklch, CanvasText, Canvas 35%);
-  background: color-mix(in oklch, CanvasText, Canvas 92%);
-}
-
-nav a.current {
-  border-bottom-color: var(--color-accent, CanvasText);
-  font-weight: 700;
-}
-
-/* ==========================
-  THEME SWITCHER
-  ========================== */
-
-.color-scheme {
-  position: fixed;
-  top: 0.75rem;
-  right: 1rem;
-  font-size: 0.85rem;
-  z-index: 1001;
 }
 
 /* ==========================
@@ -540,30 +506,20 @@ circle.selected {
     padding: 0;
   }
 
-  nav {
-    flex-wrap: wrap;
-  }
-
-  nav a {
-    flex: unset;
-    width: 50%;
-  }
-
-  .home-page nav {
+  .site-nav {
     flex-wrap: wrap;
     justify-content: center;
     border-radius: 1rem;
   }
 
-  .home-page nav a {
+  .site-nav a {
     flex: 1 0 30%;
     width: 30%;
     padding: 0.55rem 0.7rem;
     font-size: 0.85rem;
-    text-align: center;
   }
 
-  .home-page .color-scheme {
+  .color-scheme {
     top: 6.5rem;
     right: 1rem;
   }
