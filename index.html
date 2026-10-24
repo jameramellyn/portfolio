@@ -1,57 +1,152 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta
-    name="description"
-    content="Jamera Mellyn Fernando is a UC San Diego data science student interested in machine learning, neuroscience, design, and robotics."
-  />
-  <title>Jamera Mellyn Fernando | Portfolio</title>
-
-  <link rel="stylesheet" href="style.css" />
-  <script type="module" src="./global.js"></script>
-  <script type="module" src="./index.js"></script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Jamera Fernando — UC San Diego Data Science student exploring software engineering, embedded systems, and art.">
+  <title>Jamera Fernando — Portfolio</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400;1,700&family=Inter:wght@300;400;500&display=swap">
+  <link rel="stylesheet" href="style.css">
+  <script src="global.js" defer></script>
+  <script src="index.js" defer></script>
 </head>
-<body class="home-page">
-  <main>
-    <section id="home" class="hero">
-      <div class="hero-content">
-        <h1>Jamera Mellyn<br />Fernando</h1>
-        <p>
-          Hi! I am currently an undergraduate student at the University of
-          California, San Diego, studying toward a bachelor’s in Data Science
-          with a minor in Cognitive Science. With a background in robotics, I’m
-          excited to work in interdisciplinary fields that combine design
-          systems, data science, and hardware. My focus is machine learning,
-          where I hope to bring my knowledge of neuroscience to the table. I’m
-          originally from Orange County, California, and enjoy listening to
-          music and working in visual arts.
-        </p>
+<body>
+
+<a class="skip" href="#projects">Skip to projects</a>
+
+<!-- ═══ HERO ═══ -->
+<header id="home" class="hero">
+  <div class="hero-bg" aria-hidden="true">
+    <!-- Replace with: <img src="images/water.jpg" alt=""> -->
+    <span class="hero-bg-label">water image</span>
+  </div>
+
+  <nav aria-label="Main navigation">
+    <a href="#home">home</a>
+    <a href="#projects">projects</a>
+    <a href="#art">art</a>
+    <a href="#contact">contact</a>
+  </nav>
+
+  <div class="hero-content">
+    <h1>
+      <span>Jamera</span>
+      <em>fernando</em>
+    </h1>
+    <p>
+      Undergrad at University of California,<br>
+      San Diego, studying <span class="blue-underline">Data Science</span><br>
+      with a minor in Cognitive Science.<br>
+      Excited to work in fields that combine<br>
+      software engineering, data science,<br>
+      and hardware.
+    </p>
+  </div>
+</header>
+
+<main>
+
+  <!-- ═══ PROJECTS ═══ -->
+  <section id="projects" class="section projects-section" aria-labelledby="projects-title">
+    <div class="section-inner">
+      <div class="projects-layout">
+
+        <div class="project-grid" id="project-grid">
+          <!-- Populated by index.js, or add cards manually here -->
+        </div>
+
+        <div class="projects-intro">
+          <h2 id="projects-title" class="display-heading">my <mark><em>projects</em></mark></h2>
+          <p>enjoy!</p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══ ART ═══ -->
+  <section id="art" class="section art-section" aria-labelledby="art-title">
+    <div class="section-inner">
+      <div class="art-layout">
+
+        <div class="art-intro">
+          <h2 id="art-title" class="display-heading">my<br><mark><em>art</em></mark></h2>
+          <p class="art-subtitle">digital &amp; traditional</p>
+          <p class="art-cta">you can follow my insta for more!<br>
+            <!-- Replace with: <a href="https://instagram.com/yourhandle" target="_blank" rel="noopener">@yourhandle</a> -->
+          </p>
+        </div>
+
+        <div class="phone-display" role="region" aria-roledescription="carousel" aria-label="Art gallery" tabindex="0">
+          <div class="carousel-row">
+            <button class="carousel-btn" id="prev-btn" aria-label="Previous artwork">◀</button>
+            <div class="phone-frame">
+              <div class="phone-notch" aria-hidden="true"></div>
+              <div class="phone-screen">
+                <figure>
+                  <img id="art-main" src="images/art-01.svg" alt="Artwork 1 placeholder">
+                  <figcaption id="art-caption" aria-live="polite">Artwork 1 · 1 / 8</figcaption>
+                </figure>
+              </div>
+            </div>
+            <button class="carousel-btn" id="next-btn" aria-label="Next artwork">▶</button>
+          </div>
+          <div class="pedestal" aria-hidden="true"></div>
+        </div>
+
+        <div class="art-thumbnails" id="thumbnails" aria-label="Choose artwork">
+          <!-- Populated by index.js -->
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══ CONTACT ═══ -->
+  <section id="contact" class="section contact-section" aria-labelledby="contact-title">
+    <div class="contact-bg" aria-hidden="true">
+      <!-- Replace with: <img src="images/clouds.jpg" alt=""> -->
+      <span class="contact-bg-label">cloud image</span>
+    </div>
+    <div class="contact-inner">
+
+      <div class="desktop-area" aria-label="Links and photo collection">
+        <a class="desktop-icon icon-linkedin" href="https://www.linkedin.com/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn — replace with your profile URL">
+          <div class="icon-img">in</div>
+          <span class="icon-label">LinkedIn</span>
+        </a>
+        <a class="desktop-icon icon-github" href="https://github.com/jameramellyn" target="_blank" rel="noopener noreferrer" aria-label="GitHub">
+          <div class="icon-img">⌘</div>
+          <span class="icon-label">GitHub</span>
+        </a>
+        <div class="desktop-icon icon-resume">
+          <!-- Replace href and remove <div> wrapper when you have the PDF link -->
+          <div class="icon-img">📁</div>
+          <span class="icon-label">Resume</span>
+          <small class="icon-note">Add PDF link</small>
+        </div>
+
+        <!-- Desktop photo thumbnails — replace src values with your images -->
+        <div id="desktop-photos" class="desktop-photos"></div>
       </div>
 
-      <a href="#latest-projects" class="scroll-arrow" aria-label="Explore my projects"></a>
-    </section>
+      <article class="notes-card">
+        <div class="notes-toolbar">
+          <span>‹ Notes</span>
+          <span aria-hidden="true">♧ &nbsp; ⊙</span>
+        </div>
+        <div class="notes-body">
+          <h2 id="contact-title">my <mark><em>contact</em></mark></h2>
+          <p>you can always reach me through my gmail:<br>
+            <a href="mailto:jameramellyn@gmail.com">jameramellyn@gmail.com</a>
+          </p>
+        </div>
+      </article>
 
-    <section id="latest-projects" class="home-section latest-projects">
-      <div class="section-heading">
-        <p class="eyebrow">A few things I’ve been working on</p>
-        <h2>Latest Projects</h2>
-      </div>
-      <div class="projects">
-        <!-- Projects are inserted by index.js. -->
-      </div>
-    </section>
+    </div>
+  </section>
 
-    <section class="home-section github-stats">
-      <div class="section-heading">
-        <p class="eyebrow">A little activity snapshot</p>
-        <h2>GitHub Stats</h2>
-      </div>
-      <div id="profile-stats">
-        <!-- GitHub stats are inserted by index.js. -->
-      </div>
-    </section>
-  </main>
+</main>
 </body>
 </html>
