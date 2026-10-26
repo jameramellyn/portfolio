@@ -137,12 +137,13 @@
      Add your personal photo filenames here.
   ══════════════════════════════ */
   const DESKTOP_PHOTOS = [
-    { src: 'images/contact/culture-1.jpg', label: 'Culture.jpg' },
-    { src: 'images/contact/culture-2.jpg', label: 'Culture.jpg' },
-    { src: 'images/contact/me.jpg',        label: 'me.jpg'       },
-    { src: 'images/contact/culture-3.jpg', label: 'Culture.jpg' },
-    { src: 'images/contact/san-diego.jpg', label: 'San Diego.jpg' },
-    { src: 'images/contact/culture-4.jpg', label: 'Culture.jpg' },
+    { src: 'images/hackathon.png',       label: 'hackathon.png'       },
+    { src: 'images/half marathon.png',   label: 'half marathon.png'   },
+    { src: 'images/Hawaii.png',          label: 'Hawaii.png'          },
+    { src: 'images/matcha spot.png',     label: 'matcha spot.png'     },
+    { src: 'images/music concerts.png',  label: 'music concerts.png'  },
+    { src: 'images/Orange County.png',   label: 'Orange County.png'   },
+    { src: 'images/San Diego.png',       label: 'San Diego.png'       },
   ];
 
   function buildDesktopPhotos() {
