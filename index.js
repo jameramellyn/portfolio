@@ -13,25 +13,25 @@
   const PROJECTS = [
     {
       name:  'Low Price Center',
-      thumb: 'images/projects/low-price-center.png',
+      thumb: 'images/Low Price Center.png',
       label: 'Low Price Center',
       url:   'https://github.com/CSES-Open-Source/LowPriceCenter',
     },
     {
       name:  'Where Droughts Hide',
-      thumb: 'images/projects/where-droughts-hide.png',
+      thumb: 'images/Where Droughts Hide.png',
       label: 'Where Droughts Hide',
       url:   'https://github.com/pemam238/DSC-106-Final-Project',
     },
     {
       name:  'OnWise',
-      thumb: 'images/projects/onwise.png',
+      thumb: 'images/Onwise.png',
       label: 'OnWise',
       url:   'https://github.com/speechara18/cal-hacks-fa25-submission',
     },
     {
       name:  'Predicting Food Recipe Origins',
-      thumb: 'images/projects/food-origins.png',
+      thumb: 'images/Predicting Food Recipe Origins.png',
       label: 'Food Origins',
       url:   'https://github.com/ColecamC/recipes-predictive-project',
     },
