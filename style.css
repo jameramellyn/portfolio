@@ -839,40 +839,32 @@ figcaption {
 .contact-section {
   position: relative;
   min-height: 690px;
-  background: #b6cbd4 center / cover;
-  display: grid;
-  grid-template-columns: 1.1fr 1fr;
-  align-items: center;
-  gap: 55px;
-  padding: 65px 6%;
+  background: #b6cbd4;
 }
 
 .contact-bg {
   position: absolute;
   inset: 0;
   overflow: hidden;
+  z-index: 0;
 }
 
 .contact-bg img {
   width: 100%;
   height: 100%;
   object-fit: cover;
-}
-
-.contact-bg-label {
-  position: absolute;
-  bottom: 10px;
-  right: 15px;
-  font-size: 11px;
-  letter-spacing: .08em;
-  opacity: .65;
-  color: #fff;
+  display: block;
 }
 
 .contact-inner {
   position: relative;
   z-index: 1;
-  display: contents; /* lets children participate in the parent grid */
+  display: grid;
+  grid-template-columns: 1.1fr 1fr;
+  align-items: center;
+  gap: 55px;
+  padding: 65px 6%;
+  min-height: 690px;
 }
 
 /* Desktop icon area */
@@ -1014,7 +1006,7 @@ figcaption {
 @media (min-width: 1400px) {
   .projects-section,
   .art-section,
-  .contact-section {
+  .contact-inner {
     padding-left: max(4%, calc((100vw - 1350px) / 2));
     padding-right: max(4%, calc((100vw - 1350px) / 2));
   }
@@ -1059,10 +1051,11 @@ figcaption {
     height: 320px;
   }
 
-  .contact-section {
+  .contact-inner {
     grid-template-columns: 1fr;
     padding: 40px 25px;
     gap: 15px;
+    min-height: unset;
   }
 
   .desktop-area {

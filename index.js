@@ -137,7 +137,6 @@
      Add your personal photo filenames here.
   ══════════════════════════════ */
   const DESKTOP_PHOTOS = [
-    { src: 'images/hackathon.png',       label: 'hackathon.png'       },
     { src: 'images/half marathon.png',   label: 'half marathon.png'   },
     { src: 'images/Hawaii.png',          label: 'Hawaii.png'          },
     { src: 'images/matcha spot.png',     label: 'matcha spot.png'     },
