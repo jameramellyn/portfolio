@@ -70,14 +70,14 @@
      `title` is the caption shown below the phone.
   ══════════════════════════════ */
   const ARTWORKS = [
-    { src: 'images/art/art-01.jpg', title: 'Artwork 1' },
-    { src: 'images/art/art-02.jpg', title: 'Artwork 2' },
-    { src: 'images/art/art-03.jpg', title: 'Artwork 3' },
-    { src: 'images/art/art-04.jpg', title: 'Artwork 4' },
-    { src: 'images/art/art-05.jpg', title: 'Artwork 5' },
-    { src: 'images/art/art-06.jpg', title: 'Artwork 6' },
-    { src: 'images/art/art-07.jpg', title: 'Artwork 7' },
-    { src: 'images/art/art-08.jpg', title: 'Artwork 8' },
+    { src: 'images/art1.png', title: 'Artwork 1' },
+    { src: 'images/art2.png', title: 'Artwork 2' },
+    { src: 'images/art3.png', title: 'Artwork 3' },
+    { src: 'images/art4.png', title: 'Artwork 4' },
+    { src: 'images/art5.png', title: 'Artwork 5' },
+    { src: 'images/art6.png', title: 'Artwork 6' },
+    { src: 'images/art7.png', title: 'Artwork 7' },
+    { src: 'images/art8.png', title: 'Artwork 8' },
   ];
 
   let currentArt = 0;
