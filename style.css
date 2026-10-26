@@ -250,7 +250,7 @@ h1 em {
 
 .art-subtitle {
   font-size: 28px;
-  text-align: right;
+  text-align: left;
   margin-bottom: 35px;
 }
 
@@ -700,15 +700,7 @@ figcaption {
 }
 
 .project-thumb-label {
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  background: rgba(0, 0, 0, 0.5);
-  color: #fff;
-  font-size: 11px;
-  font-weight: bold;
-  padding: 5px 8px;
+  display: none;
 }
 
 .project-meta {
